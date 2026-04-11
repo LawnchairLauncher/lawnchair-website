@@ -11,34 +11,36 @@ const feedPath = path.join(rootDir, "blog", "feed.xml");
 const blogIndexPath = path.join(rootDir, "blog", "index.html");
 const SITE_URL = "https://lawnchair.app";
 
-async function walkHtmlFiles(dir, results = []) {
+async function walkHtmlFiles(dir) {
   const entries = await fs.readdir(dir, { withFileTypes: true });
-  await Promise.all(
+  const nested = await Promise.all(
     entries.map(async (entry) => {
       const fullPath = path.join(dir, entry.name);
       if (entry.isDirectory()) {
-        await walkHtmlFiles(fullPath, results);
+        return walkHtmlFiles(fullPath);
       } else if (entry.isFile() && entry.name.toLowerCase().endsWith(".html")) {
-        results.push(fullPath);
+        return [fullPath];
       }
+      return [];
     })
   );
-  return results;
+  return nested.flat();
 }
 
-async function findMarkdownDirs(dir, results = []) {
+async function findMarkdownDirs(dir) {
   const entries = await fs.readdir(dir, { withFileTypes: true });
-  await Promise.all(
+  const nested = await Promise.all(
     entries.map(async (entry) => {
       const fullPath = path.join(dir, entry.name);
       if (entry.isDirectory()) {
-        await findMarkdownDirs(fullPath, results);
+        return findMarkdownDirs(fullPath);
       } else if (entry.isFile() && entry.name.toLowerCase() === "index.md") {
-        results.push(path.dirname(fullPath));
+        return [path.dirname(fullPath)];
       }
+      return [];
     })
   );
-  return results;
+  return nested.flat();
 }
 
 async function getHtmlFilesSafely(dirs, templatePath) {
@@ -236,8 +238,7 @@ async function run() {
   const faqDir = path.join(rootDir, "faq");
 
   // Find markdown files and create HTML from template if missing
-  const markdownDirs = [];
-  await findMarkdownDirs(blogDir, markdownDirs);
+  const markdownDirs = await findMarkdownDirs(blogDir);
   await getHtmlFilesSafely(markdownDirs, blogTemplatePath);
 
   // Read all blog markdown once, produce sitemap/RSS/index data
@@ -247,9 +248,10 @@ async function run() {
   await updateBlogIndex(indexEntries);
 
   // Now find all HTML files and process them
-  const htmlFiles = [];
-  await walkHtmlFiles(blogDir, htmlFiles);
-  await walkHtmlFiles(faqDir, htmlFiles);
+  const htmlFiles = [
+    ...await walkHtmlFiles(blogDir),
+    ...await walkHtmlFiles(faqDir),
+  ];
 
   const results = await Promise.allSettled(
     htmlFiles.map((filePath) => processHtmlFile(filePath, authors))
