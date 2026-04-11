@@ -76,8 +76,8 @@ async function collectBlogEntries(dirs) {
     const { metadata } = parseMetadata(mdContent);
 
     const slug = path.basename(dir);
-    let lastmod = findMetadataValue(metadata, ["last-modified"]) ||
-                  findMetadataValue(metadata, ["first-published"]);
+    let lastmod = findMetadataValue(metadata, ["last_modified"]) ||
+                  findMetadataValue(metadata, ["first_published"]);
 
     // YYYY-MM-DD format, default to today if missing
     if (lastmod instanceof Date) {
@@ -173,8 +173,8 @@ async function collectRssEntries(dirs) {
     const slug = path.basename(dir);
     const title = metadata.title || slug;
     const description = metadata.description || "";
-    const pubDate = findMetadataValue(metadata, ["first-published"]) ||
-                    findMetadataValue(metadata, ["last-modified"]);
+    const pubDate = findMetadataValue(metadata, ["first_published"]) ||
+                    findMetadataValue(metadata, ["last_modified"]);
 
     entries.push({
       title,
@@ -258,8 +258,8 @@ async function collectBlogIndexEntries(dirs) {
     const slug = path.basename(dir);
     const title = metadata.title || slug;
     const description = metadata.description || "";
-    const pubDate = findMetadataValue(metadata, ["first-published"]) ||
-                    findMetadataValue(metadata, ["last-modified"]);
+    const pubDate = findMetadataValue(metadata, ["first_published"]) ||
+                    findMetadataValue(metadata, ["last_modified"]);
 
     entries.push({
       slug,

@@ -50,8 +50,7 @@ export function parseMetadata(markdown) {
     if (key === "__content") {
       return acc;
     }
-    const normalizedKey = key.toLowerCase().replace(/_/g, " ");
-    acc[normalizedKey] = value;
+    acc[key.toLowerCase()] = value;
     return acc;
   }, {});
 

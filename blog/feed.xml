@@ -6,22 +6,14 @@
     <link>https://lawnchair.app/blog/</link>
     <description>Announcements and related posts by the Lawnchair team.</description>
     <language>en-us</language>
-    <pubDate>Sat, 11 Apr 2026 18:18:05 GMT</pubDate>
-
-    <item>
-      <title>Lawnchair 14 is here!</title>
-      <link>https://lawnchair.app/blog/lawnchair-14/</link>
-      <guid>https://lawnchair.app/blog/lawnchair-14/</guid>
-      <description>This blog highlights the major new features in Lawnchair 14.</description>
-      <pubDate>Sat, 11 Apr 2026 18:18:05 GMT</pubDate>
-    </item>
+    <pubDate>Tue, 30 Dec 2025 00:00:00 GMT</pubDate>
 
     <item>
       <title>Lawnstate: 2025 Year End Reflection</title>
       <link>https://lawnchair.app/blog/lawnstate-2025-reflection/</link>
       <guid>https://lawnchair.app/blog/lawnstate-2025-reflection/</guid>
       <description>Let&apos;s talk about the year&apos;s progress and a sneak peek on Lawnchair 16.</description>
-      <pubDate>Sat, 11 Apr 2026 18:18:05 GMT</pubDate>
+      <pubDate>Tue, 30 Dec 2025 00:00:00 GMT</pubDate>
     </item>
 
     <item>
@@ -29,7 +21,7 @@
       <link>https://lawnchair.app/blog/lawnstate-building-momentum/</link>
       <guid>https://lawnchair.app/blog/lawnstate-building-momentum/</guid>
       <description>Let&apos;s talk about the past, present, and future of Lawnchair.</description>
-      <pubDate>Sat, 11 Apr 2026 18:18:05 GMT</pubDate>
+      <pubDate>Wed, 23 Jul 2025 00:00:00 GMT</pubDate>
     </item>
 
     <item>
@@ -37,7 +29,15 @@
       <link>https://lawnchair.app/blog/lawnchair-15-beta-1/</link>
       <guid>https://lawnchair.app/blog/lawnchair-15-beta-1/</guid>
       <description>This foundational release brings App Drawer Folders, an Android 15 rebase, and much more.</description>
-      <pubDate>Sat, 11 Apr 2026 18:18:05 GMT</pubDate>
+      <pubDate>Mon, 14 Jul 2025 00:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Lawnchair 14 is here!</title>
+      <link>https://lawnchair.app/blog/lawnchair-14/</link>
+      <guid>https://lawnchair.app/blog/lawnchair-14/</guid>
+      <description>This blog highlights the major new features in Lawnchair 14.</description>
+      <pubDate>Wed, 03 Apr 2024 00:00:00 GMT</pubDate>
     </item>
   </channel>
 </rss>
