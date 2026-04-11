@@ -119,19 +119,3 @@ export function formatDateString(value) {
   return date.toLocaleDateString("en-US", dateOptions);
 }
 
-/**
- * Find first matching metadata value from a list of keys.
- */
-export function findMetadataValue(metadata, keys) {
-  if (!metadata) {
-    return undefined;
-  }
-
-  for (const key of keys) {
-    if (metadata[key]) {
-      return metadata[key];
-    }
-  }
-
-  return undefined;
-}

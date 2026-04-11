@@ -2,7 +2,7 @@ import fs from "fs/promises";
 import path from "path";
 import { loadAuthors } from "./lib/authors.js";
 import { configureMarked, processHtmlFile } from "./lib/markdown.js";
-import { parseMetadata, findMetadataValue } from "./lib/core.js";
+import { parseMetadata } from "./lib/core.js";
 
 const rootDir = process.cwd();
 const blogTemplatePath = path.join(rootDir, "scripts", "templates", "blog.html");
@@ -68,16 +68,21 @@ async function getHtmlFilesSafely(dirs, templatePath) {
   return created;
 }
 
-async function collectBlogEntries(dirs) {
-  const entries = [];
+async function collectBlogData(dirs) {
+  const sitemapEntries = [];
+  const rssEntries = [];
+  const indexEntries = [];
+
   for (const dir of dirs) {
     const mdPath = path.join(dir, "index.md");
     const mdContent = await fs.readFile(mdPath, "utf-8");
     const { metadata } = parseMetadata(mdContent);
 
     const slug = path.basename(dir);
-    let lastmod = findMetadataValue(metadata, ["last_modified"]) ||
-                  findMetadataValue(metadata, ["first_published"]);
+    const title = metadata.title || slug;
+    const description = metadata.description || "";
+    const pubDate = metadata.first_published || metadata.last_modified;
+    let lastmod = metadata.last_modified || metadata.first_published;
 
     // YYYY-MM-DD format, default to today if missing
     if (lastmod instanceof Date) {
@@ -86,13 +91,22 @@ async function collectBlogEntries(dirs) {
       lastmod = new Date().toISOString().split("T")[0];
     }
 
-    entries.push({
-      loc: `${SITE_URL}/blog/${slug}/`,
-      lastmod,
-      priority: "0.64"
-    });
+    const link = `${SITE_URL}/blog/${slug}/`;
+
+    sitemapEntries.push({ loc: link, lastmod, priority: "0.64" });
+    rssEntries.push({ title, link, description, pubDate: toRfc822Date(pubDate) });
+    indexEntries.push({ slug, title, description, pubDate, pubDateFormatted: formatReadableDate(pubDate) });
   }
-  return entries;
+
+  // Sort RSS and index by date descending
+  rssEntries.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
+  indexEntries.sort((a, b) => {
+    const dateA = a.pubDate instanceof Date ? a.pubDate : new Date(`${a.pubDate}T00:00:00Z`);
+    const dateB = b.pubDate instanceof Date ? b.pubDate : new Date(`${b.pubDate}T00:00:00Z`);
+    return dateB - dateA;
+  });
+
+  return { sitemapEntries, rssEntries, indexEntries };
 }
 
 async function updateSitemap(blogEntries) {
@@ -163,32 +177,6 @@ function toRfc822Date(dateValue) {
   return date.toUTCString();
 }
 
-async function collectRssEntries(dirs) {
-  const entries = [];
-  for (const dir of dirs) {
-    const mdPath = path.join(dir, "index.md");
-    const mdContent = await fs.readFile(mdPath, "utf-8");
-    const { metadata } = parseMetadata(mdContent);
-
-    const slug = path.basename(dir);
-    const title = metadata.title || slug;
-    const description = metadata.description || "";
-    const pubDate = findMetadataValue(metadata, ["first_published"]) ||
-                    findMetadataValue(metadata, ["last_modified"]);
-
-    entries.push({
-      title,
-      link: `${SITE_URL}/blog/${slug}/`,
-      description,
-      pubDate: toRfc822Date(pubDate)
-    });
-  }
-
-  // Sort by pubDate descending (newest first)
-  entries.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
-  return entries;
-}
-
 async function updateRssFeed(rssEntries) {
   const latestPubDate = rssEntries.length > 0 ? rssEntries[0].pubDate : new Date().toUTCString();
 
@@ -248,37 +236,6 @@ function formatReadableDate(dateValue) {
   return date.toLocaleDateString("en-US", dateOptions);
 }
 
-async function collectBlogIndexEntries(dirs) {
-  const entries = [];
-  for (const dir of dirs) {
-    const mdPath = path.join(dir, "index.md");
-    const mdContent = await fs.readFile(mdPath, "utf-8");
-    const { metadata } = parseMetadata(mdContent);
-
-    const slug = path.basename(dir);
-    const title = metadata.title || slug;
-    const description = metadata.description || "";
-    const pubDate = findMetadataValue(metadata, ["first_published"]) ||
-                    findMetadataValue(metadata, ["last_modified"]);
-
-    entries.push({
-      slug,
-      title,
-      description,
-      pubDate,
-      pubDateFormatted: formatReadableDate(pubDate)
-    });
-  }
-
-  // Sort by pubDate descending (newest first)
-  entries.sort((a, b) => {
-    const dateA = a.pubDate instanceof Date ? a.pubDate : new Date(`${a.pubDate}T00:00:00Z`);
-    const dateB = b.pubDate instanceof Date ? b.pubDate : new Date(`${b.pubDate}T00:00:00Z`);
-    return dateB - dateA;
-  });
-  return entries;
-}
-
 async function updateBlogIndex(entries) {
   let html = await fs.readFile(blogIndexPath, "utf-8");
 
@@ -316,13 +273,11 @@ async function run() {
   await findMarkdownDirs(blogDir, markdownDirs);
   await getHtmlFilesSafely(markdownDirs, blogTemplatePath);
 
-  // Update sitemap, RSS feed, and blog index with blog entries from frontmatter
-  const blogEntries = await collectBlogEntries(markdownDirs);
-  const rssEntries = await collectRssEntries(markdownDirs);
-  const blogIndexEntries = await collectBlogIndexEntries(markdownDirs);
-  await updateSitemap(blogEntries);
+  // Read all blog markdown once, produce sitemap/RSS/index data
+  const { sitemapEntries, rssEntries, indexEntries } = await collectBlogData(markdownDirs);
+  await updateSitemap(sitemapEntries);
   await updateRssFeed(rssEntries);
-  await updateBlogIndex(blogIndexEntries);
+  await updateBlogIndex(indexEntries);
 
   // Now find all HTML files and process them
   const htmlFiles = [];

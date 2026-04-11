@@ -4,14 +4,11 @@ import { JSDOM } from "jsdom";
 import { Marked } from "marked";
 import { markedHighlight } from "marked-highlight";
 import hljs from "highlight.js";
-import { parseMetadata, findMetadataValue, formatDateString } from "./core.js";
+import { parseMetadata, formatDateString } from "./core.js";
 import * as components from "../components/index.js";
 import markedFootnote from "marked-footnote";
 
 const rootDir = process.cwd();
-
-const metadataLastModifiedKeys = ["last_modified"];
-const metadataFirstPublishedKeys = ["first_published"];
 
 let markedInstance;
 
@@ -98,8 +95,8 @@ export async function renderMarkdownIntoTarget(target, markdownSource, authors) 
   const wrapper = wrapperDoc.getElementById("wrapper");
 
   // Build context for components
-  const lastModifiedRaw = findMetadataValue(parsed.metadata, metadataLastModifiedKeys);
-  const firstPublishedRaw = findMetadataValue(parsed.metadata, metadataFirstPublishedKeys);
+  const lastModifiedRaw = parsed.metadata.last_modified;
+  const firstPublishedRaw = parsed.metadata.first_published;
   const authorRaw = parsed.metadata.authors || parsed.metadata.author;
   const lastModified = formatDateString(lastModifiedRaw);
   const firstPublished = formatDateString(firstPublishedRaw);
