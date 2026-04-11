@@ -10,8 +10,8 @@ import markedFootnote from "marked-footnote";
 
 const rootDir = process.cwd();
 
-const metadataLastModifiedKeys = ["last modified"];
-const metadataFirstPublishedKeys = ["first published"];
+const metadataLastModifiedKeys = ["last-modified"];
+const metadataFirstPublishedKeys = ["first-published"];
 
 let markedInstance;
 
