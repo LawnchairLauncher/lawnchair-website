@@ -4,7 +4,7 @@ Welcome to Lawnchair contributing guidelines, this guide primarily focus on writ
 
 ## Prerequisite
 
-- Node runtime, at least Bun 1.3.0 or at least Node.js 20
+- Node runtime, at least Bun 1.3.0 or at least Node.js 20.19
 - Node dependencies (`npm i` or `npm ci` for CI environment)
 
 ### Write from Markdown to HTML
