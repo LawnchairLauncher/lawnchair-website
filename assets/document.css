@@ -202,6 +202,11 @@ code {
   font-family: 'Google Sans Code', monospace;
 }
 
+:not(pre) > code {
+  border-radius: var(--shape-s);
+  padding: 0 4px;
+}
+
 pre {
   background: var(--surface-variant);
   border-radius: var(--shape-m);
