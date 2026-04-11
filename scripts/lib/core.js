@@ -81,6 +81,19 @@ export function parseAuthorList(value) {
 }
 
 /**
+ * Escape HTML special characters.
+ */
+export function escapeHtml(text) {
+  if (!text) return "";
+  return text
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+/**
  * Format a date value to a human-readable string.
  */
 export function formatDateString(value) {

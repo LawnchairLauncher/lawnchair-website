@@ -2,7 +2,7 @@ import fs from "fs/promises";
 import path from "path";
 import { loadAuthors } from "./lib/authors.js";
 import { configureMarked, processHtmlFile } from "./lib/markdown.js";
-import { parseMetadata } from "./lib/core.js";
+import { parseMetadata, escapeHtml, formatDateString } from "./lib/core.js";
 
 const rootDir = process.cwd();
 const blogTemplatePath = path.join(rootDir, "scripts", "templates", "blog.html");
@@ -95,7 +95,7 @@ async function collectBlogData(dirs) {
 
     sitemapEntries.push({ loc: link, lastmod, priority: "0.64" });
     rssEntries.push({ title, link, description, pubDate: toRfc822Date(pubDate) });
-    indexEntries.push({ slug, title, description, pubDate, pubDateFormatted: formatReadableDate(pubDate) });
+    indexEntries.push({ slug, title, description, pubDate, pubDateFormatted: formatDateString(pubDate) });
   }
 
   // Sort RSS and index by date descending
@@ -121,8 +121,10 @@ async function updateSitemap(blogEntries) {
   }
 
   // Update or add blog entries
+  const blogLocs = new Set();
   for (const entry of blogEntries) {
     const normalizedLoc = entry.loc.replace(/\/$/, "");
+    blogLocs.add(normalizedLoc);
     const urlBlock = `<url>
   <loc>${entry.loc}</loc>
   <lastmod>${entry.lastmod}</lastmod>
@@ -131,12 +133,14 @@ async function updateSitemap(blogEntries) {
     existingUrls.set(normalizedLoc, urlBlock);
   }
 
-  // Rebuild sitemap preserving order (non-blog first, then blog)
+  // Rebuild sitemap
   const nonBlogUrls = [];
   const blogUrls = [];
   for (const [loc, block] of existingUrls) {
     if (loc.includes("/blog/") && loc !== `${SITE_URL}/blog`) {
-      blogUrls.push(block);
+      if (blogLocs.has(loc)) {
+        blogUrls.push(block);
+      }
     } else {
       nonBlogUrls.push(block);
     }
@@ -155,15 +159,7 @@ async function updateSitemap(blogEntries) {
   console.log(`🗺️  Updated sitemap with ${blogEntries.length} blog entries.`);
 }
 
-function escapeXml(text) {
-  if (!text) return "";
-  return text
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&apos;");
-}
+
 
 function toRfc822Date(dateValue) {
   let date;
@@ -181,10 +177,10 @@ async function updateRssFeed(rssEntries) {
   const latestPubDate = rssEntries.length > 0 ? rssEntries[0].pubDate : new Date().toUTCString();
 
   const items = rssEntries.map(entry => `    <item>
-      <title>${escapeXml(entry.title)}</title>
+      <title>${escapeHtml(entry.title)}</title>
       <link>${entry.link}</link>
       <guid>${entry.link}</guid>
-      <description>${escapeXml(entry.description)}</description>
+      <description>${escapeHtml(entry.description)}</description>
       <pubDate>${entry.pubDate}</pubDate>
     </item>`).join("\n\n");
 
@@ -205,35 +201,6 @@ ${items}
 
   await fs.writeFile(feedPath, feed, "utf-8");
   console.log(`📰 Updated RSS feed with ${rssEntries.length} entries.`);
-}
-
-function escapeHtml(text) {
-  if (!text) return "";
-  return text
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#39;");
-}
-
-function formatReadableDate(dateValue) {
-  const dateOptions = { 
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-    timeZone: "UTC",
-  };
-  
-  let date;
-  if (dateValue instanceof Date) {
-    date = dateValue;
-  } else if (typeof dateValue === "string") {
-    date = new Date(`${dateValue}T00:00:00Z`);
-  } else {
-    date = new Date();
-  }
-  return date.toLocaleDateString("en-US", dateOptions);
 }
 
 async function updateBlogIndex(entries) {
