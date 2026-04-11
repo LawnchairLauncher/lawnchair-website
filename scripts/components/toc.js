@@ -17,17 +17,49 @@ export function transform(doc, wrapper, context) {
 
   const headings = Array.from(wrapper.querySelectorAll("h2, h3"));
   if (headings.length) {
-    const title = el(doc, "p", { className: "toc-title", textContent: "Table of Contents" });
-    toc.appendChild(title);
+    const p = doc.createElement("p");
+    const span = el(doc, "span", { textContent: "Table of Contents" });
+    const button = el(doc, "button", { textContent: "Show", title: "Show/Hide the Table of Contents." });
+    p.appendChild(span);
+    p.appendChild(button);
+    toc.appendChild(p);
 
-    const list = doc.createElement("ul");
+    let currentLevel = 0;
+    let currentList = null;
+    const rootFragment = doc.createDocumentFragment();
+
     headings.forEach((heading) => {
       const level = parseInt(heading.tagName[1], 10);
+
+      if (level > currentLevel) {
+        for (let i = currentLevel; i < level; i++) {
+          const ul = doc.createElement("ul");
+          if (currentList) {
+            const lastLi = currentList.lastElementChild;
+            if (lastLi) {
+              lastLi.appendChild(ul);
+            } else {
+              currentList.appendChild(ul);
+            }
+          } else {
+            rootFragment.appendChild(ul);
+          }
+          currentList = ul;
+        }
+      } else if (level < currentLevel) {
+        for (let i = currentLevel; i > level; i--) {
+          currentList = currentList.parentElement?.closest("ul") || currentList;
+        }
+      }
+
+      currentLevel = level;
+
       const link = el(doc, "a", { href: `#${heading.id}`, textContent: heading.textContent });
-      const item = el(doc, "li", { className: `toc-level-${level}` }, [link]);
-      list.appendChild(item);
+      const item = el(doc, "li", {}, [link]);
+      currentList.appendChild(item);
     });
-    toc.appendChild(list);
+
+    toc.appendChild(rootFragment);
   }
 
   if (tocInline) {

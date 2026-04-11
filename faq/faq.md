@@ -6,8 +6,6 @@ last_modified: 2025-07-14
 
 Welcome to the Lawnchair FAQ! This page provides answers to frequently asked questions about projects relating to Lawnchair, including Lawnicons.
 
-Last updated: July 14, 2025
-
 <toc-inline></toc-inline>
 
 ## Getting started

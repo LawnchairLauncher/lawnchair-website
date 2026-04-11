@@ -92,10 +92,9 @@
 
   <main id="contents">
     <p><a href="/support">Support</a> &gt; <strong>FAQ</strong></p>
-    <h1>Lawnchair FAQ</h1>
+    <div data-md="faq.md"><h1 id="lawnchair-faq">Lawnchair FAQ</h1><p class="metadata">Last updated: July 14, 2025</p>
 <p>Welcome to the Lawnchair FAQ! This page provides answers to frequently asked questions about projects relating to Lawnchair, including Lawnicons.</p>
-<p>Last updated: May 26, 2025</p>
-<div id="toc" class="collapsed"></div>
+<div id="toc" class="collapsed"><p><span>Table of Contents</span><button title="Show/Hide the Table of Contents.">Show</button></p><ul><ul><li><a href="#getting-started">Getting started</a><ul><li><a href="#what-is-lawnchair">What is Lawnchair?</a></li><li><a href="#where-can-i-download-lawnchair">Where can I download Lawnchair?</a></li><li><a href="#whats-the-difference-between-the-play-store-telegramdiscord-and-github-releases">What's the difference between the Play Store, Telegram/Discord, and GitHub releases?</a></li><li><a href="#whats-the-latest-version-of-lawnchair">What's the latest version of Lawnchair?</a></li><li><a href="#what-happened-to-lawnchair-legacy">What happened to Lawnchair Legacy?</a></li><li><a href="#is-lawnchair-free-is-it-open-source">Is Lawnchair free? Is it open source?</a></li></ul></li><li><a href="#common-questions">Common questions</a><ul><li><a href="#how-to-use-themed-icons">How to use themed icons?</a></li><li><a href="#how-to-use-smartspacer">How to use Smartspacer?</a></li><li><a href="#how-to-enable-the-google-feed">How to enable the Google Feed?</a></li><li><a href="#google-feed-still-doesnt-work">Google Feed still doesn't work!</a></li><li><a href="#how-do-i-hide-applications-from-my-app-drawer">How do I hide applications from my app drawer?</a></li><li><a href="#what-is-quickswitch-for-rooted-users-only">What is QuickSwitch? (for rooted users only)</a></li></ul></li><li><a href="#common-issues">Common issues</a><ul><li><a href="#restricted-settings-on-android-13">Restricted settings on Android 13+</a></li><li><a href="#adding-widgets-does-nothing-or-cause-lawnchair-to-crash">Adding widgets does nothing or cause Lawnchair to crash.</a></li><li><a href="#some-parts-of-the-ui-look-weird-ie-themed-icons-on-dark-mode">Some parts of the UI look weird (i.e. themed icons) on dark mode</a></li><li><a href="#im-having-issues-with-gesture-navigation">I'm having issues with gesture navigation</a></li></ul></li><li><a href="#development-and-future">Development and future</a><ul><li><a href="#when-is-the-next-update">When is the next update?</a></li><li><a href="#what-features-are-planned">What features are planned?</a></li><li><a href="#is-development-still-active">Is development still active?</a></li></ul></li><li><a href="#contributing-and-getting-help">Contributing and getting help</a><ul><li><a href="#i-want-to-report-a-bug">I want to report a bug</a></li><li><a href="#i-want-to-request-a-feature">I want to request a feature</a></li><li><a href="#i-want-to-report-a-crash">I want to report a crash</a></li><li><a href="#i-want-to-contribute-code-to-lawnchair">I want to contribute code to Lawnchair</a></li><li><a href="#i-want-to-donate-to-lawnchair">I want to donate to Lawnchair</a></li><li><a href="#i-want-to-help-translate-lawnchair">I want to help translate Lawnchair</a></li><li><a href="#i-need-help-regarding-lawnchair">I need help regarding Lawnchair</a></li></ul></li></ul></ul></div>
 <h2 id="getting-started">Getting started</h2>
 <h3 id="what-is-lawnchair">What is Lawnchair?</h3>
 <p>Lawnchair is an Android launcher based on Launcher3 with the goal of replicating Pixel Launcher while providing many customizations to its features.</p>
@@ -214,9 +213,7 @@
 </li>
 </ul>
 <p>This list might not include every possible issue, and you may experience some or none of the issues here.</p>
-<div class="markdown-alert markdown-alert-important">
-<p class="markdown-alert-title"><svg class="octicon octicon-report mr-2" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>Important</p>
-<p>These types of gesture issues are typically <strong>limitations or behaviors of the Android system itself or your device manufacturer's specific customizations</strong>, rather than bugs within Lawnchair that we can directly fix without root access (which QuickSwitch provides). Lawnchair's own home screen gestures (configured in <em>Home Settings &gt; Gestures</em>) are separate and fully controlled by us.</p>
+<div class="markdown-alert markdown-alert-important"><p class="markdown-alert-title"><span class="material-symbols-outlined markdown-alert-icon">feedback</span>Important</p><p>These types of gesture issues are typically limitations or behaviors of the Android system itself or your device manufacturer's specific customizations, rather than bugs within Lawnchair that we can directly fix without root access (which QuickSwitch provides). Lawnchair's own home screen gestures (configured in Home Settings &gt; Gestures) are separate and fully controlled by us.</p>
 <p>While we strive to offer the best gesture experience possible within Android's constraints, the most seamless gesture navigation is often found on devices running AOSP-like software or by using QuickSwitch on rooted devices.</p>
 </div>
 <h2 id="development-and-future">Development and future</h2>
@@ -249,6 +246,7 @@
 <p><a href="https://lawnchair.crowdin.com/lawnchair">Visit Crowdin</a> for more information. Note that chats there are not being monitored actively; it's best to use Telegram or Discord if you have any questions or requests.</p>
 <h3 id="i-need-help-regarding-lawnchair">I need help regarding Lawnchair</h3>
 <p>You can visit our <a href="https://t.me/lccommunity">Telegram chat</a> or <a href="https://discord.gg/3x8qNWxgGZ">Discord server</a> for help regarding Lawnchair. Other community spaces might contain varying degrees of support.</p>
+</div>
 
 
   </main>
