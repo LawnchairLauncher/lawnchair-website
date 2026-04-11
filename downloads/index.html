@@ -10,12 +10,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
     integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
     crossorigin="anonymous" referrerpolicy="no-referrer" >
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin >
+  <link rel="preconnect" href="https://scripts.simpleanalyticscdn.com" crossorigin >
   <link rel="preconnect" href="https://fonts.googleapis.com" >
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin >
-  <link
-    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Open+Sans:wght@800&display=swap"
-    rel="stylesheet" >
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@300" rel="stylesheet" >
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&subset=latin&display=swap" fetchpriority="high">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@300&icon_names=download,history&display=swap" fetchpriority="high">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" >
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" >
@@ -25,8 +25,17 @@
   <meta name="msapplication-TileColor" content="#15c666" >
   <meta name="theme-color" content="#02d663" >
 
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&subset=latin&display=swap" rel="stylesheet" >
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@300&icon_names=download,history&display=swap" rel="stylesheet" >
+
+  <link rel="preload" as="image" href="/images/lawnchair.webp" fetchpriority="high" >
+
+  <link href="/assets/m3/colors.css" rel="stylesheet" />
+  <link href="/assets/m3/shapes.css" rel="stylesheet" />
   <link href="/assets/common.css?newv6" rel="stylesheet" >
-  <link href="styles.css?newv6" rel="stylesheet" >
+  <link href="styles.css?newv5" rel="stylesheet" >
+  <script src="/assets/common.js?newv5" defer></script>
+  <script src="script.js?newv5_c12" type="module" defer></script>
 </head>
 
 <body>
@@ -34,7 +43,7 @@
     <a href="/" class="lawnchair__logo">
       <picture>
         <source type="image/webp" srcset="/images/lawnchair.webp" >
-        <img src="/images/lawnchair.png" alt="The Lawnchair Logo" >
+        <img src="/images/lawnchair.png" alt="The Lawnchair Logo" fetchpriority="high" decoding="async" />
       </picture>
       <span>Lawnchair</span>
     </a>
@@ -51,7 +60,7 @@
       <div class="card__info">
         <picture>
           <source type="image/webp" srcset="/images/lawnchair.webp" >
-          <img src="/images/lawnchair.png" width="96" height="96" alt="The Lawnchair Logo" >
+          <img src="/images/lawnchair.png" width="96" height="96" alt="The Lawnchair Logo" fetchpriority="high" decoding="async" />
         </picture>
         <h2 class="card__name" title="The actual launcher.">Lawnchair</h2>
         <span class="card__version" id="js-lawnchair-version">Loading...</span>
@@ -98,9 +107,6 @@
       <a href="https://simpleanalytics.com/lawnchair.app">Simple Analytics</a>
       - View <a href="/privacy_policy">Privacy Policy</a></span>
   </footer>
-
-  <script src="/assets/common.js?newv6"></script>
-  <script src="script.js?newv6_1" type="module"></script>
 
   <script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
   <noscript>

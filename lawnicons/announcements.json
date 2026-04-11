@@ -1,17 +1,19 @@
 {
-  "version": 1,
+  "version": 2,
   "announcements": [
     {
-      "title": "Discord giveaway",
-      "description": "A chance for priority requests",
-      "icon": "ic_award",
-      "url": "https://lawnchair.app/discord"
+      "title": "Icon request dashboard",
+      "description": "Consider contributing.",
+      "icon": "ic_table",
+      "url": "https://lawnchair.app/lawnicons-dashboard/",
+      "location": "home"
     },
     {
-      "title": "Icon request dashboard",
-      "description": "Consider contributing",
-      "icon": "ic_table",
-      "url": "https://lawnchair.app/lawnicons-dashboard/"
-    }
+      "title": "Fund community requests",
+      "description": "Contribute on Open Collective.",
+      "icon": "ic_donate",
+      "url": "https://opencollective.com/lawnchair/projects/lawnicons",
+      "location": "iconrequest"
+    }  
   ]
 }

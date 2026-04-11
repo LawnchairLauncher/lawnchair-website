@@ -1,61 +1,61 @@
 {
-   "version": 1,
-   "announcements": [
-      {
-         "text": "Get a sneak peek at the future: a first look at Lawnchair 16.",
-         "url": "https://lawnchair.app/blog/lawnstate-2025-reflection/",
-         "active": true,
-         "test": false
-      },
-      {
-         "text": "Lawnchair 15 Beta 2 is here! Happy holidays!",
-         "url": "https://github.com/LawnchairLauncher/lawnchair/releases/tag/v15.0.0-beta2",
-         "active": false,
-         "test": false
-      },
-      {
-         "text": "Lawnchair 15 Beta 1 is here!",
-         "url": "https://lawnchair.app/blog/lawnchair-15-beta-1",
-         "active": false,
-         "test": false
-      },
-      {
-         "text":"Lawnchair is live on Play Store!",
-         "url":"https://play.google.com/store/apps/details?id=app.lawnchair.play",
-         "active":false,
-         "test":false
-      },
-      {
-         "text":"Fund Lawnchair's development via Open Collective",
-         "url":"https://opencollective.com/lawnchair",
-         "active":false,
-         "test":false
-      },
-      {
-         "text":"Lawnchair 14 Beta 1 is here!",
-         "url":"https://lawnchair.app/blog/lawnchair-14",
-         "active":false,
-         "test":false
-      },
-      {
-         "text":"Very important announcement",
-         "url":"https://lawnchair.app/",
-         "active":true,
-         "test":true
-      },
-      {
-         "text":"Another very important announcement",
-         "active":true,
-         "test":true
-      },
-      {
-         "text":"Inactive announcement",
-         "active":false,
-         "test":true
-      }
-   ],
-   "features": {
-      "dock_search_bar_provider":"google",
-      "web_suggestion_provider":"google"
-   }
+  "version": 1,
+  "announcements": [
+    {
+      "text": "Get a sneak peek at the future: a first look at Lawnchair 16.",
+      "url": "https://lawnchair.app/blog/lawnstate-2025-reflection/",
+      "active": true,
+      "test": false
+    },
+    {
+      "text": "Lawnchair 15 Beta 2 is here! Happy holidays!",
+      "url": "https://github.com/LawnchairLauncher/lawnchair/releases/tag/v15.0.0-beta2",
+      "active": false,
+      "test": false
+    },
+    {
+      "text": "Lawnchair 15 Beta 1 is here!",
+      "url": "https://lawnchair.app/blog/lawnchair-15-beta-1",
+      "active": false,
+      "test": false
+    },
+    {
+      "text": "Lawnchair is live on Play Store!",
+      "url": "https://play.google.com/store/apps/details?id=app.lawnchair.play",
+      "active": false,
+      "test": false
+    },
+    {
+      "text": "Fund Lawnchair's development via Open Collective",
+      "url": "https://opencollective.com/lawnchair",
+      "active": false,
+      "test": false
+    },
+    {
+      "text": "Lawnchair 14 Beta 1 is here!",
+      "url": "https://lawnchair.app/blog/lawnchair-14",
+      "active": false,
+      "test": false
+    },
+    {
+      "text": "Very important announcement",
+      "url": "https://lawnchair.app/",
+      "active": true,
+      "test": true
+    },
+    {
+      "text": "Another very important announcement",
+      "active": true,
+      "test": true
+    },
+    {
+      "text": "Inactive announcement",
+      "active": false,
+      "test": true
+    }
+  ],
+  "features": {
+    "dock_search_bar_provider": "google",
+    "web_suggestion_provider": "google"
+  }
 }

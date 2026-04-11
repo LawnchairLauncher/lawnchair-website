@@ -10,12 +10,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
     integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
     crossorigin="anonymous" referrerpolicy="no-referrer" >
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin >
+  <link rel="preconnect" href="https://scripts.simpleanalyticscdn.com" crossorigin >
   <link rel="preconnect" href="https://fonts.googleapis.com" >
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin >
-  <link
-    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Open+Sans:wght@800&display=swap"
-    rel="stylesheet" >
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@300" rel="stylesheet" >
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&subset=latin&display=swap" fetchpriority="high">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@300&icon_names=android,smartphone&display=swap" fetchpriority="high">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" >
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" >
@@ -25,8 +25,19 @@
   <meta name="msapplication-TileColor" content="#15c666" >
   <meta name="theme-color" content="#02d663" >
 
-  <link href="/assets/common.css?newv6" rel="stylesheet" >
-  <link href="styles.css?newv6" rel="stylesheet" >
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&subset=latin&display=swap" rel="stylesheet" >
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@300&icon_names=android,smartphone&display=swap" rel="stylesheet" >
+
+  <link rel="preload" as="image" href="/images/lawnchair.webp" fetchpriority="high" >
+  <link rel="preload" as="image" href="/images/hero-background.svg" fetchpriority="high" >
+  <link rel="preload" as="image" href="/images/phone-pixel.webp" fetchpriority="high" >
+
+  <link href="/assets/m3/colors.css" rel="stylesheet" />
+  <link href="/assets/m3/shapes.css" rel="stylesheet" />
+  <link href="/assets/common.css?newv62" rel="stylesheet" >
+  <link href="styles.css?newv52" rel="stylesheet" >
+  <script src="/assets/common.js?newv5" defer></script>
+  <script src="script.js?newv5_c12" defer></script>
 
   <script type="application/ld+json">
       {
@@ -72,7 +83,7 @@
             <picture>
               <source type="image/webp" srcset="/images/lawnchair.webp" >
               <img class="hero__content__icon" src="/images/lawnchair.png" width="150" height="150"
-                alt="The Lawnchair Logo" >
+                alt="The Lawnchair Logo" fetchpriority="high" decoding="async" >
             </picture>
             <h1 class="hero__content__name">Lawnchair</h1>
             <div class="hero__content__description">
@@ -80,10 +91,12 @@
             </div>
             <div class="hero__content__downloads">
               <a href="/downloads" class="button primary">
-                <span class="icon-button material-symbols-outlined">download</span>
+                <svg id="download" fill="currentColor" height="24px" viewBox="0 -960 960 960" width="24px">
+                  <path d="M480-320 280-520l56-58 104 104v-326h80v326l104-104 56 58-200 200ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z" />
+                </svg>
                 Download Lawnchair 15
               </a>
-              <a href="https://play.google.com/store/apps/details?id=ch.deletescape.lawnchair.plah" class="button">
+              <a href="https://play.google.com/store/apps/details?id=app.lawnchair.play" class="button">
                 <svg width="24" height="24" fill="none" stroke="var(--on-primary-container)" stroke-width="12" version="1.1"
                   xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
                   <path
@@ -92,7 +105,7 @@
                   <path d="M 3.7702092,19.636605 15.225593,8.1812219 M 3.7702092,4.3627599 15.225593,15.818143"
                     style="stroke-width: 1.52738" />
                 </svg>
-                View Lawnchair Legacy
+                View on Google Play
               </a>
             </div>
           </div>
@@ -103,7 +116,7 @@
       <picture>
         <source type="image/webp" srcset="/images/phone-pixel.webp" >
         <img class="about__image" src="/images/phone-pixel.png"
-          alt="A screenshot of a user using Lawnchair for their home screen." width="300" height="600" >
+          alt="A screenshot of a user using Lawnchair for their home screen." width="300" height="600" fetchpriority="high" loading="lazy" decoding="async" >
       </picture>
       <div class="about__info">
         <h2 class="about__header">No clever tagline needed</h2>
@@ -160,25 +173,25 @@
       </div>
       <div class="links__cards">
         <a class="link__card" href="https://github.com/LawnchairLauncher/lawnchair">
-          <img src="/images/github.svg" alt="" class="dark-invert" height="50" >
+          <img src="/images/github.svg" alt="" class="dark-invert" height="50" loading="lazy" decoding="async" >
           <span>GitHub</span>
         </a>
         <a class="link__card" href="https://x.com/lawnchairapp">
-          <img src="/images/x.svg" alt="" height="50" >
+          <img src="/images/x.svg" alt="" height="50" loading="lazy" decoding="async" >
           <span>X</span></a>
         <a class="link__card" href="https://mastodon.social/@lawnchairapp" rel="me">
-          <img src="/images/mastodon.svg" alt="" height="50" >
+          <img src="/images/mastodon.svg" alt="" height="50" loading="lazy" decoding="async" >
           <span>Mastodon</span></a>
         <a class="link__card" href="https://t.me/lccommunity"><img src="/images/telegram.svg" alt=""
-            height="50" ><span>Telegram</span></a>
+            height="50" loading="lazy" decoding="async" ><span>Telegram</span></a>
         <a class="link__card" href="https://discord.gg/3x8qNWxgGZ"><img src="/images/discord.svg" alt=""
-            height="50" ><span>Discord</span></a>
+            height="50" loading="lazy" decoding="async" ><span>Discord</span></a>
         <a class="link__card" href="https://forum.xda-developers.com/t/lawnchair-customizable-pixel-launcher.3627137/">
-          <img src="/images/xda.svg" alt="" height="50" >
+          <img src="/images/xda.svg" alt="" height="50" loading="lazy" decoding="async" >
           <span>XDA</span>
         </a>
         <a class="link__card" href="https://github.com/LawnchairLauncher/lawnchair/wiki">
-          <img src="/images/wiki.svg" alt="" height="50" >
+          <img src="/images/wiki.svg" alt="" height="50" loading="lazy" decoding="async" >
           <span>Wiki</span>
         </a>
       </div>
@@ -191,8 +204,6 @@
       <a href="https://simpleanalytics.com/lawnchair.app">Simple Analytics</a>
       - View <a href="/privacy_policy">Privacy Policy</a></span>
   </footer>
-  <script src="/assets/common.js?newv6"></script>
-  <script src="script.js?newv6_c12"></script>
 
   <script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
   <noscript>
