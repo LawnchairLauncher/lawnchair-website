@@ -55,6 +55,11 @@
   --lawnchair-green-on-color: rgb(255 255 255);
   --lawnchair-green-color-container: rgb(182 241 187);
   --lawnchair-green-on-color-container: rgb(0 33 10);
+  --code-keyword: #0550ae;
+  --code-string: #0a3069;
+  --code-comment: #6e7781;
+  --code-number: #953800;
+  --code-attr: #116329;
 }
 
 @media screen and (prefers-color-scheme: dark) {
@@ -113,5 +118,10 @@
     --lawnchair-green-on-color: rgb(0 57 21);
     --lawnchair-green-color-container: rgb(27 81 41);
     --lawnchair-green-on-color-container: rgb(182 241 187);
+    --code-keyword: #ff7b72;
+    --code-string: #a5d6ff;
+    --code-comment: #8b949e;
+    --code-number: #ffa657;
+    --code-attr: #7ee787;
   }
 }

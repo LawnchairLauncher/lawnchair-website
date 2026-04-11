@@ -150,3 +150,9 @@ footer a:hover {
     display: none;
   }
 }
+
+.material-symbols-outlined, 
+.material-symbols-rounded, 
+.material-symbols-sharp {
+  user-select: none;
+}

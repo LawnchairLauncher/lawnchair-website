@@ -1,0 +1,16 @@
+{
+  "name": "lawnchair-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.js"
+  },
+  "dependencies": {
+    "highlight.js": "^11.11.1",
+    "jsdom": "^27.0.0",
+    "marked": "^17.0.1",
+    "marked-footnote": "^1.4.0",
+    "marked-highlight": "^2.2.3",
+    "yaml-front-matter": "^4.1.1"
+  }
+}

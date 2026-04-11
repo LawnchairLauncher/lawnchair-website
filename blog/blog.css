@@ -14,9 +14,101 @@ figure figcaption {
 
 figure picture {
   border-radius: var(--shape-l);
+  overflow: hidden;
 }
 
 figure img {
   margin: auto;
   display: block;
+  max-height: 100%;
+  max-width: 100%;
+  transition: all .3s ease-in-out;
+}
+
+figure img:hover {
+  transform: scale(1.1);
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  .dark-invert {
+    filter: invert(1)
+  }
+}
+
+.fancy-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 0;
+  margin: 0;
+  margin-block: 0;
+}
+
+.fancy-links li {
+  list-style: none;
+}
+
+.fancy-link {
+  transition: filter 0.4s ease, border-radius 0.2s ease;
+  padding: 10px 16px;
+  border-radius: var(--shape-m);
+  width: 100%;
+  text-decoration: none;
+  min-width: 300px;
+  max-width: 300px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.fancy-link:hover {
+  filter: brightness(0.9);
+  border-radius: var(--shape-xl);
+  border-bottom: 0;
+}
+
+.fancy-link:focus {
+  filter: brightness(0.8);
+}
+
+.fancy-link img {
+  width: 30px;
+  height: 30px;
+}
+
+.fancy-link.mastodon {
+  background: var(--tertiary-container);
+  color: var(--on-tertiary-container);
+}
+
+.fancy-link.twitter {
+  background: var(--secondary-container);
+  color: var(--on-secondary-container);
+}
+
+.gallery ul {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+.gallery li {
+  flex: 0 0 auto;
+  list-style: none;
+}
+
+.gallery img {
+  height: 300px;
+  width: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.gallery img:hover {
+  transform: scale(1.02)
 }

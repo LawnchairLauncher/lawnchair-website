@@ -1,0 +1,26 @@
+{
+  "authors": [
+    {
+      "id": "generic",
+      "name": "Lawnchair Launcher Team",
+      "role": "Organization",
+      "avatar": "/images/lawnchair.png"
+    },
+    {
+      "id": "lawnchair-team",
+      "name": "Lawnchair Team",
+      "role": "Android launcher",
+      "avatar": "/images/lawnchair.png"
+    },
+    {
+      "id": "lawnicons-team",
+      "name": "Lawnicons Team",
+      "role": "Icon design"
+    },
+    {
+      "id": "thesuperdragon",
+      "name": "TheSuperDragon",
+      "role": "Lawnchair developer"
+    }
+  ]
+}

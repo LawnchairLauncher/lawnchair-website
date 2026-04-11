@@ -1,2 +1,4 @@
 .vscode/settings.json
+node_modules/
+blog/test-blog/
 .idea/
