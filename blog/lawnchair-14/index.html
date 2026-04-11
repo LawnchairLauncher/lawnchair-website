@@ -4,13 +4,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <title>Lawnchair 14 is here! | Lawnchair Blogs</title>
-    <meta name="description" content="Lawnchair 14">
+    <meta name="description" content="This blog highlights the major new features in Lawnchair 14.">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="">
-    <link rel="preconnect" href="https://scripts.simpleanalyticscdn.com" crossorigin="">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;subset=latin&amp;display=swap" fetchpriority="high">
 
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -20,16 +18,9 @@
     <meta name="msapplication-TileColor" content="#15c666">
     <meta name="theme-color" content="#02d663">
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;subset=latin&amp;display=swap" rel="stylesheet">
-
-    <link rel="preload" as="image" href="/images/lawnchair.webp" fetchpriority="high">
-
-    <link href="/assets/m3/colors.css" rel="stylesheet">
-    <link href="/assets/m3/shapes.css" rel="stylesheet">
     <link href="/assets/common.css?newv6" rel="stylesheet">
     <link href="/assets/document.css" rel="stylesheet">
-
-    <script src="/assets/common.js?newv5" defer=""></script>
+    <link href="/blog/blog.css" rel="stylesheet">
 
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://lawnchair.app/blog/feed.xml">
   </head>
@@ -39,7 +30,7 @@
       <a href="/" class="lawnchair__logo">
         <picture>
           <source type="image/webp" srcset="/images/lawnchair.webp">
-          <img src="/images/lawnchair.png" alt="The Lawnchair Logo" fetchpriority="high" decoding="async">
+          <img src="/images/lawnchair.png" alt="The Lawnchair Logo">
         </picture>
         <span>Lawnchair</span>
       </a>
@@ -49,161 +40,56 @@
         <a href="/support">Support</a>
       </nav>
     </header>
-    <main>
-      <h1 id="lawnchair-14-is-here-">Lawnchair 14 is here!</h1>
-      <p>(Maybe a clever tagline is needed.)</p>
-      <p>
-        Yes, that's right. We have released a beta version of
-        <strong>Lawnchair 14</strong> today; download on
-        <a href="https://github.com/LawnchairLauncher/lawnchair/releases">GitHub</a>, <a href="https://t.me/lawnchairci">Telegram</a>, or
-        <a href="https://discord.gg/3x8qNWxgGZ">Discord</a>.
-      </p>
-      <p>
-        Now, you may be wondering: what’s new? Well, there are many new things
-        in Lawnchair.
-      </p>
-      <h2 id="a-note-on-stability">A note on stability</h2>
-      <p>
-        While we have changed our stability status from Alpha to Beta, there are
-        still some issues that may remain. We have indeed tested Lawnchair and
-        it is stable enough for general use, but if you see something wrong,
-        please report it on our
-        <a href="https://github.com/LawnchairLauncher/lawnchair/issues">GitHub</a>.
-      </p>
-      <p>
-        Also note that Lawnchair 14 Beta 1 will install as a separate app from
-        Lawnchair 12.1. However, you can easily export your old v12.1 settings
-        via the "Create Backup" option in the Home Settings dropdown menu and
-        import them in v14 via "Restore Backup".
-      </p>
-      <h2 id="highlights">Highlights</h2>
-      <h3 id="quickswitch-support">QuickSwitch support</h3>
-      <p>
-        All of us know that Lawnchair is one of the few launchers with
-        QuickSwitch support. And yes, we still support it, but with a twist:
-      </p>
-      <p>
-        <strong>Lawnchair now supports QuickSwitch on Android 10 to 14!</strong>
-      </p>
-      <p>
-        That's right! If you're stuck on an older version of Android,
-        you'll need not to use an older version of Lawnchair (i.e. Lawnchair
-        10 for Android 10) to have smooth gestures and a customizable recents
-        screen
-      </p>
-      <p>
-        Note that while Lawnchair supports Android 13 and below, some features
-        exclusive to Android 14 will not show up in these Android versions. A
-        notable example is the taskbar, which will <em>not</em> show up on
-        Android 12 and below.
-      </p>
-      <h3 id="gesturenavcontract">GestureNavContract</h3>
-      <p>
-        While rooted users can enjoy Lawnchair with QuickSwitch, this leaves the
-        majority of users in the dust when it comes to Launcher-Recents
-        animations.
-      </p>
-      <p>
-        Fortunately, Google made an API in Android 11 (named GestureNavContract)
-        to have a stopgap in animations. You can read more about this in the
-        [blog post on XDA]. While the API isn't perfect and there can be
-        issues, it does the job well in preserving the smooth animations.
-      </p>
-      <p>
-        In short, Lawnchair 14 now supports these animations so you can have a
-        smoother experience when using Lawnchair without root.
-      </p>
-      <p>
-        Note that some devices may not support this feature; if Lawnchair
-        doesn't have these animations, it probably isn't supported by
-        your device.
-      </p>
-      <h3 id="global-search">Global Search</h3>
-      <p>
-        As you may already know, some OEMs like Samsung and Google allow you to
-        search your phone’s contacts, settings, files, and more. However, these
-        features are locked into their specific devices, making Global Search an
-        exclusive feature.
-      </p>
-      <p>With the new Lawnchair update, you don’t need any of those.</p>
-      <p>
-        We now have Global Search! Search your phone’s contacts, files,
-        settings, the web and more with this update. Note that we are planning
-        to add additional search options in the future, including and API for
-        creating custom search providers and a more Pixel-like UI for the search
-        interface.
-      </p>
-      <p>
-        You may have noticed above that we are using Startpage as the default
-        search engine. This leads us to the below point.
-      </p>
-      <h4 id="startpage">Startpage</h4>
-      <p>
-        Starpage is a private search engine that does not collect any data while
-        still providing Google-like results. After much discussion internally,
-        we’re happy to report that we now have a revenue-sharing agreement with
-        them.
-      </p>
-      <p>
-        Here's the best part: Lawnchair does <em>not</em> share any data at
-        all to them, and your private data is still safe. If you don't want
-        Startpage, you can easily disable it within Home Settings &gt; Drawer
-        Search &gt; Startpage Suggestions and Home Settings &gt; Dock &gt;
-        Search Provider.
-      </p>
-      <h3 id="smartspacer-support">Smartspacer support</h3>
-      <p>
-        <a href="https://github.com/KieronQuinn/Smartspacer">Smartspacer</a> is
-        an app made by KieronQuinn that aims to extend Google’s At a Glance’s
-        functionality. It provides a lot more features than Lawnchair’s own
-        implementation due to its dynamic requirements system and it's
-        plugins.
-      </p>
-      <p>
-        In Lawnchair 14, we now have added support for the Smartspacer SDK! This
-        means that you can now use Smartspacer with all the At a Glance features
-        not possible before — animations, horizontal scrolling, and more! Thanks
-        a lot to him as well for implementing the initial PR to have this
-        feature within Lawnchair.
-      </p>
-      <h3 id="theming">Theming</h3>
-      <p>
-        Themers rejoice, we have added a lot of options for customizing
-        Lawnchair!
-      </p>
-      <ul>
-        <li>Ability to hide the Dock</li>
-        <li>Custom icon shape picker</li>
-        <li>Tweaked icon pack picker</li>
-        <li>More padding, color, and size customizations</li>
-        <li>More font support</li>
-      </ul>
-      <p>And many many more!</p>
-      <h3 id="upcoming">Upcoming</h3>
-      <p>
-        We're not stopping here! Here's some of the features that will
-        (hopefully) be added in the next version:
-      </p>
-      <ul>
-        <li>V2 multiple icon pack system</li>
-        <li>Responsive Settings user interface</li>
-        <li>No app drawer mode</li>
-        <li>
-          More custom colors for each components (including full Material colors
-          customization)
-        </li>
-        <li>Drawer tabs (i.e. flowerpot)</li>
-      </ul>
-      <h3 id="thanks">Thanks</h3>
-      <p>
-        We'd like to give thanks to all of our core team members,
-        particularly MrSluffy for reviving Lawnchair’s development. We'd
-        also like to thank all the contributors that added many functionalities
-        and fixed bugs in Lawnchair. Also, we'd like to thank the community
-        for still supporting Lawnchair even at it's lowest point.
-      </p>
-      <p>Published by the Lawnchair Team on April 3, 2024 | 08:20 UTC</p>
-    </main>
+    <main data-md="index.md"><h1 id="lawnchair-14-is-here">Lawnchair 14 is here!</h1><p class="post-description">This blog highlights the major new features in Lawnchair 14.</p><p class="metadata">First published: April 3, 2024</p><div class="author-cards"><div class="author-card"><img class="author-avatar" alt="Lawnchair Launcher Team" src="/images/lawnchair.png"><div class="author-content"><p class="author-name">Lawnchair Launcher Team</p><p class="author-role">Organization</p></div></div></div><p>(Maybe a clever tagline is needed.)</p>
+<p>Yes, that's right. We have released a beta version of <strong>Lawnchair 14</strong> today; download on <a href="https://github.com/LawnchairLauncher/lawnchair/releases">GitHub</a>, <a href="https://t.me/lawnchairci">Telegram</a>, or <a href="https://discord.gg/3x8qNWxgGZ">Discord</a>.</p>
+<p>Now, you may be wondering: what’s new? Well, there are many new things in Lawnchair.</p>
+<h2 id="a-note-on-stability">A note on stability</h2>
+<p>While we have changed our stability status from Alpha to Beta, there are still some issues that may remain. We have indeed tested Lawnchair and it is stable enough for general use, but if you see something wrong, please report it on our <a href="https://github.com/LawnchairLauncher/lawnchair/issues">GitHub</a>.</p>
+<p>Also note that Lawnchair 14 Beta 1 will install as a separate app from Lawnchair 12.1. However, you can easily export your old v12.1 settings via the "Create Backup" option in the Home Settings dropdown menu and import them in v14 via "Restore Backup".</p>
+<h2 id="highlights">Highlights</h2>
+<h3 id="quickswitch-support">QuickSwitch support</h3>
+<p>All of us know that Lawnchair is one of the few launchers with QuickSwitch support. And yes, we still support it, but with a twist:</p>
+<p><strong>Lawnchair now supports QuickSwitch on Android 10 to 14!</strong></p>
+<p>That's right! If you're stuck on an older version of Android, you'll need not to use an older version of Lawnchair (i.e. Lawnchair 10 for Android 10) to have smooth gestures and a customizable recents screen</p>
+<p>Note that while Lawnchair supports Android 13 and below, some features exclusive to Android 14 will not show up in these Android versions. A notable example is the taskbar, which will <em>not</em> show up on Android 12 and below.</p>
+<h3 id="gesturenavcontract">GestureNavContract</h3>
+<p>While rooted users can enjoy Lawnchair with QuickSwitch, this leaves the majority of users in the dust when it comes to Launcher-Recents animations.</p>
+<p>Fortunately, Google made an API in Android 11 (named GestureNavContract) to have a stopgap in animations. You can read more about this in the [blog post on XDA]. While the API isn't perfect and there can be issues, it does the job well in preserving the smooth animations.</p>
+<p>In short, Lawnchair 14 now supports these animations so you can have a smoother experience when using Lawnchair without root.</p>
+<p>Note that some devices may not support this feature; if Lawnchair doesn't have these animations, it probably isn't supported by your device.</p>
+<h3 id="global-search">Global Search</h3>
+<p>As you may already know, some OEMs like Samsung and Google allow you to search your phone’s contacts, settings, files, and more. However, these features are locked into their specific devices, making Global Search an exclusive feature.</p>
+<p>With the new Lawnchair update, you don’t need any of those.</p>
+<p>We now have Global Search! Search your phone’s contacts, files, settings, the web and more with this update. Note that we are planning to add additional search options in the future, including and API for creating custom search providers and a more Pixel-like UI for the search interface.</p>
+<p>You may have noticed above that we are using Startpage as the default search engine. This leads us to the below point.</p>
+<h4 id="startpage">Startpage</h4>
+<p>Starpage is a private search engine that does not collect any data while still providing Google-like results. After much discussion internally, we’re happy to report that we now have a revenue-sharing agreement with them.</p>
+<p>Here's the best part: Lawnchair does <em>not</em> share any data at all to them, and your private data is still safe. If you don't want Startpage, you can easily disable it within Home Settings &gt; Drawer Search &gt; Startpage Suggestions and Home Settings &gt; Dock &gt; Search Provider.</p>
+<h3 id="smartspacer-support">Smartspacer support</h3>
+<p><a href="https://github.com/KieronQuinn/Smartspacer">Smartspacer</a> is an app made by KieronQuinn that aims to extend Google’s At a Glance’s functionality. It provides a lot more features than Lawnchair’s own implementation due to its dynamic requirements system and it's plugins.</p>
+<p>In Lawnchair 14, we now have added support for the Smartspacer SDK! This means that you can now use Smartspacer with all the At a Glance features not possible before — animations, horizontal scrolling, and more! Thanks a lot to him as well for implementing the initial PR to have this feature within Lawnchair.</p>
+<h3 id="theming">Theming</h3>
+<p>Themers rejoice, we have added a lot of options for customizing Lawnchair!</p>
+<ul>
+<li>Ability to hide the Dock</li>
+<li>Custom icon shape picker</li>
+<li>Tweaked icon pack picker</li>
+<li>More padding, color, and size customizations</li>
+<li>More font support</li>
+</ul>
+<p>And many many more!</p>
+<h3 id="upcoming">Upcoming</h3>
+<p>We're not stopping here! Here's some of the features that will (hopefully) be added in the next version:</p>
+<ul>
+<li>V2 multiple icon pack system</li>
+<li>Responsive Settings user interface</li>
+<li>No app drawer mode</li>
+<li>More custom colors for each components (including full Material colors customization)</li>
+<li>Drawer tabs (i.e. flowerpot)</li>
+</ul>
+<h3 id="thanks">Thanks</h3>
+<p>We'd like to give thanks to all of our core team members, particularly MrSluffy for reviving Lawnchair’s development. We'd also like to thank all the contributors that added many functionalities and fixed bugs in Lawnchair. Also, we'd like to thank the community for still supporting Lawnchair even at it's lowest point.</p>
+</main>
     <footer>
       <span>Website by
         <a href="https://superdragonxd.github.io/">SuperDragonXD</a> - Hosted by
@@ -211,6 +97,7 @@
         <a href="https://simpleanalytics.com/lawnchair.app">Simple Analytics</a>
         - View <a href="/privacy_policy">Privacy Policy</a></span>
     </footer>
+    <script src="/assets/common.js?newv6"></script>
 
     <script async="" defer="" src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
     <noscript>
