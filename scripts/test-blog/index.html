@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <!-- Remove if you don't use markdown codeblock -->
-    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:wght@400&subset=latin-ext,latin&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:wght@400&amp;subset=latin-ext,latin&amp;display=swap" rel="stylesheet">
 
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -42,10 +42,14 @@
         <a href="/support">Support</a>
       </nav>
     </header>
-    <main data-md="index.md"><h1 id="lc-fm-title">LC-FM Title</h1><p class="post-description">LC-FM Description</p><p class="metadata">First published: January 23, 2077 · Last updated: July 23, 2025</p><div class="author-cards"><div class="author-card"><img class="author-avatar" alt="Lawnchair Launcher Team" src="/images/lawnchair.png"><div class="author-content"><p class="author-name">Lawnchair Launcher Team</p><p class="author-role">Organization</p><div class="author-links"><a href="https://github.com/lawnchairlauncher"><img src="/images/github.svg" alt="github"></a><a href="https://x.com/lawnchairapp"><img src="/images/x.svg" alt="x"></a><a href="https://mastodon.social/@lawnchairapp"><img src="/images/mastodon.svg" alt="mastodon"></a></div></div></div><div class="author-card"><img class="author-avatar" alt="Lawnchair Team" src="/images/lawnchair.png"><div class="author-content"><p class="author-name">Lawnchair Team</p><p class="author-role">Android launcher</p><div class="author-links"><a href="https://github.com/lawnchairlauncher/lawnchair"><img src="/images/github.svg" alt="github"></a><a href="https://x.com/lawnchairapp"><img src="/images/x.svg" alt="x"></a><a href="https://mastodon.social/@lawnchairapp"><img src="/images/mastodon.svg" alt="mastodon"></a></div></div></div><div class="author-card"><div class="author-content"><p class="author-name">Lawnicons Team</p><p class="author-role">Icon design</p><div class="author-links"><a href="https://github.com/lawnchairlauncher/lawnicons"><img src="/images/github.svg" alt="github"></a></div></div></div></div><p><toc-inline></toc-inline></p>
-<p>Decoration escape *Italicised* to **Bold**.</p>
-<p><em>CM Italicised</em> / CM Italicised (alternative)_</p>
-<p><strong>CM Bold</strong> / CM Bold (alternative)__</p>
+    <main data-md="index.md"><h1 id="lc-fm-title">LC-FM Title</h1><p class="post-description">LC-FM Description</p><p class="metadata">First published: January 23, 2077 · Last updated: July 23, 2025</p><div class="author-cards"><div class="author-card"><img class="author-avatar" alt="Lawnchair Launcher Team" src="/images/lawnchair.png"><div class="author-content"><p class="author-name">Lawnchair Launcher Team</p><p class="author-role">Organization</p></div></div><div class="author-card"><img class="author-avatar" alt="Lawnchair Team" src="/images/lawnchair.png"><div class="author-content"><p class="author-name">Lawnchair Team</p><p class="author-role">Android launcher</p></div></div><div class="author-card"><div class="author-content"><p class="author-name">Lawnicons Team</p><p class="author-role">Icon design</p></div></div></div><!-- CM Comment! -->
+
+<p><toc-inline></toc-inline></p>
+<!-- ToC Inline only work with ToC Script! -->
+
+<p>Decoration escape *Italicised* to **Bold**</p>
+<p><em>CM Italicised</em> / <em>CM Italicised (alternative)</em></p>
+<p><strong>CM Bold</strong> / <strong>CM Bold (alternative)</strong></p>
 <p><em><strong>Markdown Italicised + Bold</strong></em></p>
 <blockquote>
 <p>CM Blockquote</p>
@@ -64,11 +68,10 @@
 </ul>
 </li>
 </ul>
-<p>CM Bullet point
-0. Point 0</p>
+<p>CM Bullet point</p>
 <ol>
-<li>Point 1</li>
-<li>Point 2<ol start="0">
+<li>Point 0</li>
+<li>Point 1<ol start="0">
 <li>Nested point 0</li>
 <li>Nested point 1<ol start="0">
 <li>Nested-ed point 0</li>
@@ -83,14 +86,23 @@
 <p><a href="https://example.com">CM Link (Standard)</a></p>
 <p><a href="/images/blog-15-beta/dock-customization-example.jpg" title="CM alt (Reference tooltip)">CM Link (Reference)</a></p>
 <pre><code class="hljs language-md"><span class="hljs-section"># CM Codeblock (md)</span>
+
+&lt;!-- Hi! --&gt;
 </code></pre><pre><code class="hljs language-py"><span class="hljs-built_in">print</span>(<span class="hljs-string">"CM Codeblock (py)"</span>)
+
+<span class="hljs-comment"># Hi!</span>
+</code></pre><pre><code class="hljs">CM Codeblock (alternative)
+
+Hi!
 </code></pre><p><code>CM Inline code</code></p>
 <p>CM Separator</p>
 <hr>
 <p>CM Separator (Alternative)</p>
 <hr>
 <h1 id="cm-h1">CM h1</h1>
+<h1 id="cm-h1-alternative">CM h1 (Alternative)</h1>
 <h2 id="cm-h2">CM h2</h2>
+<h2 id="cm-h2-alternative">CM h2 (Alternative)</h2>
 <h3 id="cm-h3">CM h3</h3>
 <h4 id="cm-h4">CM h4</h4>
 <h5 id="cm-h5">CM h5</h5>
@@ -99,6 +111,17 @@
 <p>Hi</p>
 
 <p><bold>HTML bold</bold></p>
+<p>GFM Tasklist</p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> 🧋 Lawnchair Bubble Tea<ul>
+<li><input disabled="" type="checkbox"> Tapioca</li>
+<li><input checked="" disabled="" type="checkbox"> Milk</li>
+<li><input disabled="" type="checkbox"> Tea</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> Lawnchair Cinnamon Tea</li>
+</ul>
+<p><del>GFM Strikethrough</del></p>
 <div class="markdown-alert markdown-alert-tip"><p class="markdown-alert-title"><span class="material-symbols-outlined markdown-alert-icon">lightbulb_2</span>Tip</p><p>GFM Admonition tip!</p>
 </div>
 <div class="markdown-alert markdown-alert-note"><p class="markdown-alert-title"><span class="material-symbols-outlined markdown-alert-icon">info</span>Note</p><p>GFM Admonition note!</p>
@@ -194,6 +217,97 @@
 </tr>
 </tbody></table>
 <p>GFM footnote<sup><a id="footnote-ref-1" href="#footnote-1" data-footnote-ref="" aria-describedby="footnote-label">1</a></sup>.</p>
+<h1 id="lawnchair-deeplinking">Lawnchair Deeplinking</h1>
+<h2 id="lawnchair-launcher">Lawnchair Launcher</h2>
+<h3 id="bubble-tea-lawnchair-16">Bubble Tea (Lawnchair 16)</h3>
+<p>Settings <a href="lawnchair://settings/general">General</a> • General settings page</p>
+<blockquote>
+<p><code>lawnchair://settings/general</code></p>
+</blockquote>
+<p>Settings <a href="lawnchair://settings/general-iconpack">Icon pack</a> • Themed icons, icon pack selector</p>
+<blockquote>
+<p><code>lawnchair://settings/general-iconpack</code></p>
+</blockquote>
+<p>Settings <a href="lawnchair://settings/general-icon-shape-creator">Custom icon shape creator</a> • Custom icon shape creator</p>
+<blockquote>
+<p><code>lawnchair://settings/general-icon-shape-creator</code></p>
+</blockquote>
+<p>Settings <a href="lawnchair://settings/home-screen">Home screen</a> • Home screen page</p>
+<blockquote>
+<p><code>lawnchair://settings/home-screen</code></p>
+</blockquote>
+<p>Settings <a href="lawnchair://settings/home-screen-grid">Home screen grid</a> • Change launcher grid size</p>
+<blockquote>
+<p><code>lawnchair://settings/home-screen-grid</code></p>
+</blockquote>
+<p>Settings <a href="lawnchair://settings/home-screen-popup-editor">Home screen popup editor</a> • Change launcher popup menu</p>
+<blockquote>
+<p><code>lawnchair://settings/home-screen-popup-editor</code></p>
+</blockquote>
+<p>Settings <a href="lawnchair://settings/dock">Dock</a> • Dock page</p>
+<blockquote>
+<p><code>lawnchair://settings/dock</code></p>
+</blockquote>
+<p>Settings <a href="lawnchair://settings/dock-search-provider">Dock search provider</a> • Change dock search provider</p>
+<blockquote>
+<p><code>lawnchair://settings/dock-search-provider</code></p>
+</blockquote>
+<p>Settings <a href="lawnchair://settings/smartspace">Smartspace</a> • Smartspace page (At a Glance)</p>
+<blockquote>
+<p><code>lawnchair://settings/smartspace</code></p>
+</blockquote>
+<p>Settings <a href="lawnchair://settings/app-drawer">App drawer</a> • App drawer page</p>
+<blockquote>
+<p><code>lawnchair://settings/app-drawer</code></p>
+</blockquote>
+<p>Settings <a href="lawnchair://settings/app-drawer-hidden-apps">App drawer hidden apps</a> • Change app drawer hidden apps</p>
+<blockquote>
+<p><code>lawnchair://settings/app-drawer-hidden-apps</code></p>
+</blockquote>
+<p>Settings <a href="lawnchair://settings/app-drawer-folder">App drawer folder</a> • Set app drawer folder</p>
+<blockquote>
+<p><code>lawnchair://settings/app-drawer-folder</code></p>
+</blockquote>
+<p>Settings <a href="lawnchair://settings/search">Search</a> • Search page</p>
+<blockquote>
+<p><code>lawnchair://settings/search</code></p>
+</blockquote>
+<p>Settings <a href="lawnchair://settings/search-provider">Search provider</a> • Base search provider page</p>
+<blockquote>
+<p><code>lawnchair://settings/search-provider</code></p>
+</blockquote>
+<p>Settings <a href="lawnchair://settings/folders">Folders</a> • Folders page</p>
+<blockquote>
+<p><code>lawnchair://settings/folders</code></p>
+</blockquote>
+<p>Settings <a href="lawnchair://settings/gestures">Gestures</a> • Gestures page</p>
+<blockquote>
+<p><code>lawnchair://settings/gestures</code></p>
+</blockquote>
+<p>Settings <a href="lawnchair://settings/quickstep">Quickstep</a> • Quickstep page (Recent provider page)</p>
+<blockquote>
+<p><code>lawnchair://settings/quickstep</code></p>
+</blockquote>
+<p>Settings <a href="lawnchair://settings/backup-restore">Backup and Restore</a> • Restore and Backup page</p>
+<blockquote>
+<p><code>lawnchair://settings/backup-restore</code></p>
+</blockquote>
+<p>Settings <a href="lawnchair://settings/create-backup">Create backup</a> • Create backup page</p>
+<blockquote>
+<p><code>lawnchair://settings/create-backup</code></p>
+</blockquote>
+<p>Settings <a href="lawnchair://settings/about">About</a> • About page</p>
+<blockquote>
+<p><code>lawnchair://settings/about</code></p>
+</blockquote>
+<p>Settings <a href="lawnchair://settings/about-licenses">About licenses</a> • 3rd party acknowledge</p>
+<blockquote>
+<p><code>lawnchair://settings/about-licenses</code></p>
+</blockquote>
+<p>Settings <a href="lawnchair://settings/experimental-features">Experimental features</a> • Experimental features page</p>
+<blockquote>
+<p><code>lawnchair://settings/experimental-features</code></p>
+</blockquote>
 <section class="footnotes" data-footnotes="">
 <h2 id="footnote-label" class="sr-only">Footnotes</h2>
 <ol>

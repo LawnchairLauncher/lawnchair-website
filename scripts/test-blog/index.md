@@ -163,3 +163,75 @@ GFM Table: Center
 GFM footnote[^1].
 
 [^1]: GFM reference
+
+# Lawnchair Deeplinking
+
+## Lawnchair Launcher
+
+### Bubble Tea (Lawnchair 16)
+
+Settings [General](lawnchair://settings/general) • General settings page
+> `lawnchair://settings/general`
+
+Settings [Icon pack](lawnchair://settings/general-iconpack) • Themed icons, icon pack selector
+> `lawnchair://settings/general-iconpack`
+
+Settings [Custom icon shape creator](lawnchair://settings/general-icon-shape-creator) • Custom icon shape creator
+> `lawnchair://settings/general-icon-shape-creator`
+
+Settings [Home screen](lawnchair://settings/home-screen) • Home screen page
+> `lawnchair://settings/home-screen`
+
+Settings [Home screen grid](lawnchair://settings/home-screen-grid) • Change launcher grid size
+> `lawnchair://settings/home-screen-grid`
+
+Settings [Home screen popup editor](lawnchair://settings/home-screen-popup-editor) • Change launcher popup menu
+> `lawnchair://settings/home-screen-popup-editor`
+
+Settings [Dock](lawnchair://settings/dock) • Dock page
+> `lawnchair://settings/dock`
+
+Settings [Dock search provider](lawnchair://settings/dock-search-provider) • Change dock search provider
+> `lawnchair://settings/dock-search-provider`
+
+Settings [Smartspace](lawnchair://settings/smartspace) • Smartspace page (At a Glance)
+> `lawnchair://settings/smartspace`
+
+Settings [App drawer](lawnchair://settings/app-drawer) • App drawer page
+> `lawnchair://settings/app-drawer`
+
+Settings [App drawer hidden apps](lawnchair://settings/app-drawer-hidden-apps) • Change app drawer hidden apps
+> `lawnchair://settings/app-drawer-hidden-apps`
+
+Settings [App drawer folder](lawnchair://settings/app-drawer-folder) • Set app drawer folder
+> `lawnchair://settings/app-drawer-folder`
+
+Settings [Search](lawnchair://settings/search) • Search page
+> `lawnchair://settings/search`
+
+Settings [Search provider](lawnchair://settings/search-provider) • Base search provider page
+> `lawnchair://settings/search-provider`
+
+Settings [Folders](lawnchair://settings/folders) • Folders page
+> `lawnchair://settings/folders`
+
+Settings [Gestures](lawnchair://settings/gestures) • Gestures page
+> `lawnchair://settings/gestures`
+
+Settings [Quickstep](lawnchair://settings/quickstep) • Quickstep page (Recent provider page)
+> `lawnchair://settings/quickstep`
+
+Settings [Backup and Restore](lawnchair://settings/backup-restore) • Restore and Backup page
+> `lawnchair://settings/backup-restore`
+
+Settings [Create backup](lawnchair://settings/create-backup) • Create backup page
+> `lawnchair://settings/create-backup`
+
+Settings [About](lawnchair://settings/about) • About page
+> `lawnchair://settings/about`
+
+Settings [About licenses](lawnchair://settings/about-licenses) • 3rd party acknowledge
+> `lawnchair://settings/about-licenses`
+
+Settings [Experimental features](lawnchair://settings/experimental-features) • Experimental features page
+> `lawnchair://settings/experimental-features`
