@@ -49,21 +49,31 @@ async function getHtmlFilesSafely(dirs, templatePath) {
 
   for (const dir of dirs) {
     const htmlPath = path.join(dir, "index.html");
+    const mdPath = path.join(dir, "index.md");
+    const mdContent = await fs.readFile(mdPath, "utf-8");
+    const { metadata } = parseMetadata(mdContent);
+
+    // Regenerate HTML from the markdown-backed template so index.md remains
+    // the source of truth for both new and existing posts.
+    let html = template;
+    html = html.replace(/\{\{title\}\}/g, escapeHtml(metadata.title) || "{{title}}");
+    html = html.replace(/\{\{description\}\}/g, escapeHtml(metadata.description) || "{{description}}");
+
+    let existingHtml = null;
     try {
-      await fs.access(htmlPath);
+      existingHtml = await fs.readFile(htmlPath, "utf-8");
     } catch {
-      const mdPath = path.join(dir, "index.md");
-      const mdContent = await fs.readFile(mdPath, "utf-8");
-      const { metadata } = parseMetadata(mdContent);
+      existingHtml = null;
+    }
 
-      // Replace HTML placeholders with frontmatter values, or as-is if not found
-      let html = template;
-      html = html.replace(/\{\{title\}\}/g, escapeHtml(metadata.title) || "{{title}}");
-      html = html.replace(/\{\{description\}\}/g, escapeHtml(metadata.description) || "{{description}}");
-
+    if (existingHtml !== html) {
       await fs.writeFile(htmlPath, html, "utf-8");
       created++;
-      console.log(`📄 Created ${path.relative(rootDir, htmlPath)}`);
+      console.log(
+        existingHtml === null
+          ? `📄 Created ${path.relative(rootDir, htmlPath)}`
+          : `📄 Updated ${path.relative(rootDir, htmlPath)}`
+      );
     }
   }
 
