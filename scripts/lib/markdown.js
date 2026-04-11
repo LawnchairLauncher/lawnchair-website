@@ -100,7 +100,8 @@ export async function renderMarkdownIntoTarget(target, markdownSource, authors) 
   const authorRaw = parsed.metadata.authors || parsed.metadata.author;
   const lastModified = formatDateString(lastModifiedRaw);
   const firstPublished = formatDateString(firstPublishedRaw);
-  const wantsToc = target.getAttribute("data-toc") === "true";
+  const wantsToc = target.getAttribute("data-toc") === "true" ||
+                   wrapper.querySelector("toc-inline") !== null;
   const title = parsed.metadata.title;
   const description = parsed.metadata.description;
 
