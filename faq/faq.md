@@ -2,7 +2,7 @@
 
 Welcome to the Lawnchair FAQ! This page provides answers to frequently asked questions about projects relating to Lawnchair, including Lawnicons.
 
-Last updated: July 14, 2025
+Last updated: March 1, 2025
 
 ## Getting started
 
@@ -44,7 +44,7 @@ Lawnicons is an icon pack that aims to recreate themed icons for many launchers.
 
 ### What's the latest version of Lawnchair?
 
-The latest official release is [Lawnchair 15 Beta 1](https://github.com/LawnchairLauncher/lawnchair/releases/tag/v15.0.0-beta1). We are also developing newer versions of Lawnchair 15 in our nightly builds.
+The latest official release is [Lawnchair 15 Beta 2.1](https://github.com/LawnchairLauncher/lawnchair/releases/tag/v15.0.0-beta2.1). We are also developing newer versions of Lawnchair 15 in our nightly builds.
 
 ### What happened to Lawnchair Legacy?
 
@@ -113,7 +113,10 @@ Due to security reasons, Android 13+ disallows notifications access and accessib
 
 See [the support page on Google](https://support.google.com/android/answer/12623953#allowrestrictedsettings) for more information.
 
-### Adding widgets does nothing or cause Lawnchair to crash.
+### Adding widgets does nothing or cause Lawnchair to crash
+
+> [!TIP]
+> **This issue have been fix in Lawnchair 15 Beta 2.1 and newer!**
 
 This is a relatively common issue, especially when the widget has a set-up screen. This issue has been fixed on Android 14 and above, but for older Android versions (or if you are still having issues), follow these steps:
 
@@ -129,17 +132,24 @@ Disable force-dark on your phone's settings.
 
 ### I'm having issues with gesture navigation
 
+> [!TIP]
+> **This issue have been fix in Lawnchair 15 Beta 2.1 and newer!**
+>
+> If you are still having issue you might want to consider disabling GestureNavContract feature in favor of default opening/closing animation in
+> *Home settings > Three-dots at the top right > Experimental features > GestureNavContract API*
+
 Smooth gesture navigation is a priority for a great launcher experience. However, its behavior with third-party launchers like Lawnchair can vary significantly based on your phone's manufacturer (OEM), their Android customization, and your Android version.
 
 Android is designed so the original system launcher often has special privileges for handling gesture animations (like swiping home or accessing the Recents screen) most fluidly. When you switch to a third-party launcher, these integrations might not be as seamless.
 
 1. **For rooted users (Best Experience): QuickSwitch**
-    * If your device is rooted, using the **[QuickSwitch Magisk module](https://github.com/skittles9823/QuickSwitch)** is highly recommended.
-    * QuickSwitch allows Lawnchair to integrate deeply as the system's QuickStep (Recents) provider, resulting in the smoothest animations and access to more Recents features.
-    * See our [QuickSwitch FAQ section](#what-is-quickswitch-for-rooted-users-only) for more details.
+    - If your device is rooted, using the **[QuickSwitch Magisk module](https://github.com/skittles9823/QuickSwitch)** is highly recommended.
+    - QuickSwitch allows Lawnchair to integrate deeply as the system's QuickStep (Recents) provider, resulting in the smoothest animations and access to more Recents features.
+    - See our [QuickSwitch FAQ section](#what-is-quickswitch-for-rooted-users-only) for more details.
 2. **For non-rooted users: GestureNavContract API**
-    * Lawnchair implements Google's **GestureNavContract API** (Android 11+) for non-rooted devices. This API helps improve animation smoothness for actions like app open/close and returning home.
-    * **Note:** The effectiveness of GestureNavContract depends heavily on how well your device manufacturer has implemented it. Devices with AOSP-like Android versions (such as Google Pixel, Nothing Phone, Fairphone, or custom ROMs based on AOSP) tend to have better results. Devices with heavily customized Android skins (e.g., MIUI, ColorOS, OneUI) may still exhibit more issues.
+    - If you are using Lawnchair 15 Beta 2.1, disable the GestureNavContract API to revert back to default animation in *Home settings > Three-dots at the top right > Experimental features > GestureNavContract API*.
+    - Lawnchair implements Google's **GestureNavContract API** (Android 11+) for non-rooted devices. This API helps improve animation smoothness for actions like app open/close and returning home.
+    - **Note:** The effectiveness of GestureNavContract depends heavily on how well your device manufacturer has implemented it. Devices with AOSP-like Android versions (such as Google Pixel, Nothing Phone, Fairphone, or custom ROMs based on AOSP) tend to have better results. Devices with heavily customized Android skins (e.g., MIUI, ColorOS, OneUI) may still exhibit more issues.
   
 #### Common gesture-related issues you might encounter
 

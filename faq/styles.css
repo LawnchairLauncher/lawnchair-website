@@ -114,6 +114,11 @@ code {
   color: var(--on-tertiary-container);
 }
 
+.markdown-alert.markdown-alert-tip {
+  border-left: 8px solid var(--lawnchair-green-color-container);
+  color: var(--on-tertiary-container);
+}
+
 .markdown-alert .markdown-alert-title {
   display: flex;
   align-items: center;
