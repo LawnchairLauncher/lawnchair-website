@@ -7,13 +7,6 @@
       "icon": "ic_table",
       "url": "https://lawnchair.app/lawnicons-dashboard/",
       "location": "home"
-    },
-    {
-      "title": "Fund community requests",
-      "description": "Ends on May 1st.",
-      "icon": "ic_donate",
-      "url": "https://opencollective.com/lawnchair/projects/lawnicons",
-      "location": "iconrequest"
-    }  
+    }
   ]
 }
