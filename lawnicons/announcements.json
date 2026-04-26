@@ -2,11 +2,18 @@
   "version": 2,
   "announcements": [
     {
+      "title": "Localize Lawnicons",
+      "description": "Earn a priority icon request.",
+      "icon": "ic_translate",
+      "url": "https://github.com/LawnchairLauncher/lawnicons/issues/3546",
+      "location": "home"
+    },
+    {
       "title": "Icon request dashboard",
-      "description": "Consider contributing.",
+      "description": "Your submissions, tracked.",
       "icon": "ic_table",
       "url": "https://lawnchair.app/lawnicons-dashboard/",
       "location": "home"
-    }
+    }    
   ]
 }
