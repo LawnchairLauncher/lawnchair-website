@@ -1,0 +1,57 @@
+name: Update Icon Requests Status
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Check latest major release
+        id: check
+        run: |
+          RELEASES=$(curl -s https://api.github.com/repos/LawnchairLauncher/lawnicons/releases?per_page=20)
+          LATEST_MAJOR=$(echo "$RELEASES" | jq -r '[.[] | select(.tag_name | test("^[0-9]+\\.[0-9]+\\.0$"))] | .[0]')
+          
+          if [ "$LATEST_MAJOR" = "null" ]; then
+            echo "No major release found"
+            echo "days_since=999" >> $GITHUB_OUTPUT
+            echo "enabled=false" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          
+          PUBLISHED=$(echo "$LATEST_MAJOR" | jq -r '.published_at')
+          TAG=$(echo "$LATEST_MAJOR" | jq -r '.tag_name')
+          echo "Latest major release: $TAG ($PUBLISHED)"
+          
+          RELEASE_DATE=$(date -d "$PUBLISHED" +%s)
+          NOW=$(date +%s)
+          DAYS=$(( (NOW - RELEASE_DATE) / 86400 ))
+          echo "Days since release: $DAYS"
+          echo "days_since=$DAYS" >> $GITHUB_OUTPUT
+          
+          if [ "$DAYS" -le 14 ]; then
+            echo "enabled=true" >> $GITHUB_OUTPUT
+          else
+            echo "enabled=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Update settings.json
+        run: |
+          ENABLED=${{ steps.check.outputs.enabled }}
+          echo "Setting enabled=$ENABLED"
+          echo "{\"enabled\": $ENABLED}" > lawnicons-request/settings.json
+
+      - name: Commit changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add .
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Update requests status: enabled=$ENABLED" && git push)
