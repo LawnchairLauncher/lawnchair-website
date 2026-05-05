@@ -47,7 +47,7 @@ jobs:
         run: |
           ENABLED=${{ steps.check.outputs.enabled }}
           echo "Setting enabled=$ENABLED"
-          echo "{\"enabled\": $ENABLED}" > lawnicons-request/settings.json
+          jq --argjson e "$ENABLED" '.enabled = $e' lawnicons-request/settings.json > tmp.json && mv tmp.json lawnicons-request/settings.json
 
       - name: Commit changes
         run: |
