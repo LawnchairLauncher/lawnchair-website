@@ -46,9 +46,22 @@ jobs:
       - name: Update settings.json
         run: |
           ENABLED=${{ steps.check.outputs.enabled }}
-          echo "Setting enabled=$ENABLED"
-          jq --argjson e "$ENABLED" '.enabled = $e' lawnicons-request/settings.json > tmp.json && mv tmp.json lawnicons-request/settings.json
-
+          PREV_ENABLED=$(jq -r '.enabled' lawnicons-request/settings.json)
+          
+          if [ "$ENABLED" = "true" ]; then
+            jq --argjson e "$ENABLED" '.enabled = $e' lawnicons-request/settings.json > tmp.json && mv tmp.json lawnicons-request/settings.json
+          else
+            FETCH_AFTER=$(jq -r '.fetch_emails_after // ""' lawnicons-request/settings.json)
+            if [ "$PREV_ENABLED" = "true" ] && [ -z "$FETCH_AFTER" ]; then
+              TODAY=$(date +%Y-%m-%d)
+              jq --argjson e "$ENABLED" --arg f "$TODAY" \
+                '.enabled = $e | .fetch_emails_after = $f' \
+                lawnicons-request/settings.json > tmp.json && mv tmp.json lawnicons-request/settings.json
+            else
+              jq --argjson e "$ENABLED" '.enabled = $e' lawnicons-request/settings.json > tmp.json && mv tmp.json lawnicons-request/settings.json
+            fi
+          fi
+          
       - name: Commit changes
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"

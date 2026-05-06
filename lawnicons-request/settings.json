@@ -1,4 +1,5 @@
 {
-  "__comment": "When true, fetch_emails.py in lawnicons-requests-dashboard will collect icon request emails from Gmail. See https://github.com/LawnchairLauncher/lawnicons-requests-dashboard/blob/main/scripts/fetch_emails.py",
-  "enabled": false
+  "_comment": "Managed by update_icon_requests_status workflow. When enabled: requests are open. When disabled with fetch_emails_after set: emails collected once. See https://github.com/LawnchairLauncher/lawnicons-requests-dashboard/blob/main/scripts/fetch_emails.py",
+  "enabled": false,
+  "fetch_emails_after": null
 }
