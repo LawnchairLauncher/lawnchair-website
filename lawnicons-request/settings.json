@@ -1,5 +1,5 @@
 {
-  "_comment": "Managed by update_icon_requests_status workflow. When enabled: requests are open. When disabled with fetch_emails_after set: emails collected once. See https://github.com/LawnchairLauncher/lawnicons-requests-dashboard/blob/main/scripts/fetch_emails.py",
+  "_comment": "Managed by update_icon_requests_status workflow. When enabled: requests are open. When disabled with fetch_emails_after set: emails collected twice. See https://github.com/LawnchairLauncher/lawnicons-requests-dashboard/blob/main/scripts/fetch_emails.py",
   "enabled": false,
   "fetch_emails_after": null
 }
