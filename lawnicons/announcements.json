@@ -7,13 +7,6 @@
       "icon": "ic_translate",
       "url": "https://github.com/LawnchairLauncher/lawnicons/issues/3546",
       "location": "home"
-    },
-    {
-      "title": "Icon request dashboard",
-      "description": "Community queue.",
-      "icon": "ic_table",
-      "url": "https://lawnchair.app/lawnicons-dashboard/",
-      "location": "home"
-    }    
+    }
   ]
 }
