@@ -1,5 +1,12 @@
 {
   "version": 2,
   "announcements": [
+    {
+      "title": "Localize Lawnicons",
+      "description": "Help us speak your language.",
+      "icon": "ic_translate",
+      "url": "https://lawnchair.crowdin.com/lawnicons",
+      "location": "home"
+    }
   ]
 }
