@@ -12,7 +12,7 @@
 ## Architecture at a Glance
 
 ```
-Root level:     index.html, privacy_policy.html, styles.css, script.js
+Root level:     index.html, privacy-policy.html, styles.css, script.js
 Multi-page:     /blog/, /downloads/, /faq/, /support/, /lawnicons/, etc.
 Blog posts:     /blog/{slug}/index.html (nested per-post structure)
 Shared assets:  /assets/common.{css,js}, /assets/m3/{colors,shapes}.css
