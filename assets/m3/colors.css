@@ -55,6 +55,9 @@
   --lawnchair-green-on-color: rgb(255 255 255);
   --lawnchair-green-color-container: rgb(182 241 187);
   --lawnchair-green-on-color-container: rgb(0 33 10);
+  --lawnchair-accent: var(--lawnchair-green-color);
+  --lawnchair-on-accent: var(--lawnchair-green-on-color);
+  --lawnchair-accent-hover: hsla(149, 75%, 51%, 0.4);
 }
 
 @media screen and (prefers-color-scheme: dark) {
@@ -113,5 +116,8 @@
     --lawnchair-green-on-color: rgb(0 57 21);
     --lawnchair-green-color-container: rgb(27 81 41);
     --lawnchair-green-on-color-container: rgb(182 241 187);
+    --lawnchair-accent: var(--lawnchair-green-color);
+    --lawnchair-on-accent: var(--lawnchair-green-on-color);
+    --lawnchair-accent-hover: hsla(149, 75%, 51%, 0.4);
   }
 }

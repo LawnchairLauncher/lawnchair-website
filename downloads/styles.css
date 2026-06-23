@@ -68,7 +68,7 @@ img {
 }
 
 .card__downloads .icon-button:not(.disabled):active {
-  background: var(--accent-normal);
+  background: var(--primary-container);
 }
 
 .card__downloads a.card__button {

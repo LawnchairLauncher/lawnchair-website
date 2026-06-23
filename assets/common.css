@@ -68,14 +68,14 @@ header > a {
   gap: 6px;
   font-weight: 700;
   transition: background 0.4s ease;
-  background-color: hsla(149, 75%, 51%, 0);
+  background-color: transparent;
   padding: 6px 10px 6px 6px;
   border-radius: 24px;
 }
 
 header > a:hover {
   transition: background 0.4s ease;
-  background-color: hsla(149, 75%, 51%, 0.4);
+  background-color: var(--lawnchair-accent-hover);
 }
 
 header > a:visited {

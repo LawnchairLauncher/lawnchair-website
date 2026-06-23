@@ -82,6 +82,7 @@ main a {
   font-weight: 400;
   text-decoration: none;
   outline-offset: 4px;
+  overflow-wrap: anywhere;
 }
 
 main a:hover {

@@ -5,6 +5,50 @@ figure {
   margin: auto;
 }
 
+.blogs {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.blogs a,
+.blogs a:hover {
+  border-bottom: 1px solid var(--outline-variant);
+}
+
+.blogs a:active {
+  background: none;
+}
+
+.blogs a:last-child {
+  border-bottom: 0;
+}
+
+.blog {
+  color: var(--on-surface);
+  border-radius: var(--shape-m);
+  padding: 16px;
+  margin-bottom: 6px;
+  transition: all 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.blog.latest {
+  background-color: var(--secondary-container);
+  color: var(--on-secondary-container);
+}
+
+.blog:hover {
+  background-color: var(--surface-container-highest);
+  border-radius: var(--shape-xl);
+}
+
+.blog p {
+  margin: 0;
+}
+
 figure figcaption {
   text-align: center;
   padding-top: 8px;
@@ -17,6 +61,31 @@ figure picture {
 }
 
 figure img {
+  margin: auto;
+  display: block;
+}
+
+.post-details {
+  background: var(--surface-container-highest);
+  padding: 16px;
+  border-radius: var(--shape-l);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.post-details[open] summary {
+  margin-bottom: 8px;
+}
+
+.post-details summary {
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.post-details figure video {
+  border-radius: var(--shape-l);
   margin: auto;
   display: block;
 }

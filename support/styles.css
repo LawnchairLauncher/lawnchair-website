@@ -79,7 +79,7 @@ main {
 
 .support-card--main .support-card__button {
   background: var(--primary);
-  color: var(--on-primary)
+  color: var(--on-primary);
 }
 
 .support-card--main .support-card__button:visited {
