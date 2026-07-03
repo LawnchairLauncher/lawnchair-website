@@ -2,24 +2,33 @@ import { Octokit } from "https://esm.sh/octokit";
 
 const octokit = new Octokit();
 
-const getLatestRelease = async (repo, index = 0) => {
+const getLatestRelease = async (repo) => {
   const urlParams = new URLSearchParams(window.location.search);
 
-  if (urlParams.get("disabledownloads")) {
+  if (urlParams.get("disableDownloads")) {
     console.log("Disabled downloads due to flag <code>disableDownloads</code>");
     return null;
   }
 
   try {
-    const data = (
-      await octokit.request("GET /repos/{owner}/{repo}/releases", {
-        owner: "lawnchairlauncher",
-        repo: repo,
-      })
-    ).data[index];
+    const response = await octokit.request("GET /repos/{owner}/{repo}/releases", {
+      owner: "lawnchairlauncher",
+      repo: repo,
+    });
+
+    const validRelease = response.data.find(release => {
+      const isNightly =
+        release.tag_name?.toLowerCase().includes("nightly") ||
+        release.name?.toLowerCase().includes("nightly");
+
+      return !isNightly;
+    });
+
+    if (!validRelease) return null;
+
     return {
-      version: data.name.substr(data.name.search(/\d/)),
-      downloadLink: data.assets[0].browser_download_url,
+      version: validRelease.name.slice(validRelease.name.search(/\d/)),
+      downloadLink: validRelease.assets[0]?.browser_download_url || `https://github.com/lawnchairlauncher/${repo}/releases`,
     };
   } catch {
     return null;
@@ -37,20 +46,19 @@ const majorVersions = {
 const getFallbackDownloadLink = (repo) =>
   `https://github.com/lawnchairlauncher/${repo}/releases`;
 
-// todo futureproof
 repoNames.forEach(async (it) => {
-  let latestRelease = await getLatestRelease(it);
-  if (latestRelease.version == "y") {
-    latestRelease = await getLatestRelease(it, 1);
-  }
+  const latestRelease = await getLatestRelease(it);
+
   const versionSpan = document.querySelector(`#js-${it}-version`);
   const downloadAnchor = document.querySelector(`#js-${it}-download`);
+
   versionSpan.textContent = `Version ${
     latestRelease ? latestRelease.version : majorVersions[it]
   }`;
   downloadAnchor.href = latestRelease
     ? latestRelease.downloadLink
     : getFallbackDownloadLink(it);
+
   versionSpan.classList.remove("disabled");
   downloadAnchor.classList.remove("disabled");
 });

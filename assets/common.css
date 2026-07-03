@@ -50,11 +50,11 @@ header {
   align-items: center;
   transition: background 1s;
   z-index: 20;
-  color: var(--on-surface-container);
+  color: var(--on-surface);
 }
 
 header a {
-  color: var(--on-surface-container);
+  color: var(--on-surface);
   text-decoration: none;
 }
 
@@ -79,7 +79,7 @@ header > a:hover {
 }
 
 header > a:visited {
-  color: var(--on-surface-container);
+  color: var(--on-surface);
 }
 
 .lawnchair__logo img,

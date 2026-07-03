@@ -6,8 +6,7 @@ body {
 main {
   background-color: var(--surface);
   border-radius: var(--shape-xl);
-  margin: auto;
-  margin-top: 20px;
+  margin: 20px auto auto;
   max-width: 900px;
   width: 80%;
   padding: 12px 40px;
@@ -55,7 +54,7 @@ main h4 {
 }
 
 main :is(h3, h4) + main :is(p, ul, ol) {
-  margin-block-start:0px;
+  margin-block-start:0;
 }
 
 :is(p, ol, ul) + h3 {
@@ -63,7 +62,7 @@ main :is(h3, h4) + main :is(p, ul, ol) {
 }
 
 p + :is(ul, ol) {
-  margin-block-start: 0px
+  margin-block-start: 0
 }
 
 main li {

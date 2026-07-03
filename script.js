@@ -1,6 +1,6 @@
 const url = window.location.origin + "/live-information.json";
 
-function buildSnackbar(urlParams) {
+function buildSnackbar() {
   function buildHtml() {
     return `
 <span>Several announcements are available.</span>
@@ -41,12 +41,11 @@ async function fetchAnnouncements(url) {
     const response = await fetch(url);
 
     if (!response.ok) {
+      // noinspection ExceptionCaughtLocallyJS
       throw new Error(`HTTP error! status: ${response.status}`);
+    } else {
+      return await response.json();
     }
-
-    const jsonData = await response.json();
-
-    return jsonData;
   } catch (error) {
     console.error("Error fetching announcements:", error);
     return [];
@@ -72,7 +71,7 @@ function getAnnouncements(data) {
     const testMode = announcement.test || test ? "test" : ""
     const active = announcement.active ? "active" : ""
 
-    const data = announcement.url != null ? `
+    return announcement.url != null ? `
     <a class="announcement ${testMode} ${active}" href="${announcement.url}">
       <div class="title">${announcement.text}</div>
     </a>
@@ -80,8 +79,6 @@ function getAnnouncements(data) {
     <div class="announcement ${testMode} ${active}">
       <div class="title">${announcement.text}</div>
     </div>`
-
-    return data
   }
 
   function buildDialog(announcementList, test) {

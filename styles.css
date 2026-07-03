@@ -175,9 +175,8 @@ main>*:not(:first-child) {
 
 .hero__background:hover {
   border-radius: 0 0 var(--shape-xl) var(--shape-xl);
-  margin: 0 auto;
   width: 100%;
-  margin-top: -1px;
+  margin: -1px auto 0;
   min-height: 90vh;
 }
 
@@ -240,7 +239,7 @@ main>*:not(:first-child) {
 .snackbar_dismiss {
   all: unset;
   transition: 0.3s background;
-  color: var(--on-inverse-surface);
+  color: var(--inverse-on-surface);
   padding: 5px;
   border-radius: var(--shape-xl);
   min-width: 20px;
@@ -362,7 +361,6 @@ main>*:not(:first-child) {
 }
 
 .features__container .feature :is(span, svg) {
-  font-display: swap;
   width: 48px;
   height: 48px;
   font-size: 48px;
@@ -437,10 +435,6 @@ main>section:not(:first-child) {
 }
 
 @media screen and (prefers-color-scheme: dark) {
-  .hero__content {
-    color: var(--text-color);
-  }
-
   .hero__content__icon {
     filter: brightness(90%);
   }
@@ -491,15 +485,8 @@ main>section:not(:first-child) {
   }
 
   .link__card {
-    min-width: -webkit-fill-available;
-    min-width: fill-available;
     padding: 16px 20px;
     max-width: inherit;
-  }
-
-  .hero__content__downloads .button {
-    width: fill-available;
-    width: -webkit-fill-available;
   }
 
   .hero__content__downloads {

@@ -27,8 +27,7 @@ img {
   align-items: center;
   display: flex;
   justify-content: space-between;
-  margin: auto;
-  margin-bottom: 10px;
+  margin: auto auto 10px;
   transition: background 0.2s ease, border-radius 0.2s ease;
 }
 
@@ -104,7 +103,7 @@ img {
   flex-direction: column;
   text-align: center;
   margin-top: 80px;
-  padding: 40px 0px;
+  padding: 40px 0;
 }
 
 .card.card__main .card__downloads {
