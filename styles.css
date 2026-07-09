@@ -382,10 +382,43 @@ main>*:not(:first-child) {
   text-align: center;
 }
 
+/* Sponsors section */
+.sponsors {
+  width: 85%;
+  margin: 12px auto 60px auto;
+  font-size: 1.05em;
+  color: var(--on-tertiary-container);
+}
+
+.sponsor__card {
+  display: block;
+  width: fit-content;
+  transition: filter 0.4s ease;
+}
+
+.sponsor__card:hover {
+  filter: brightness(0.9);
+}
+
+.sponsor__card img {
+  display: block;
+  width: 300px;
+  max-width: 100%;
+  height: auto;
+}
+
+.sponsors__description {
+  margin-top: 30px;
+}
+
+.sponsors__description a {
+  color: var(--secondary);
+}
+
 /* Links section */
 .links {
   width: 85%;
-  margin: 12px auto 40px auto;
+  margin: 12px auto;
   font-size: 1.05em;
   gap: 2em;
   color: var(--on-tertiary-container);
@@ -393,6 +426,8 @@ main>*:not(:first-child) {
 
 .links__cards {
   margin-top: 30px;
+  /* Offsets the trailing margin-bottom on the last row of cards */
+  margin-bottom: -10px;
   gap: 6px 14px;
   display: flex;
   flex-wrap: wrap;
