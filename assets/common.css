@@ -159,6 +159,7 @@ footer a:hover {
   --md-state-layer-mix: transparent;
   background-image: linear-gradient(var(--md-state-layer-mix), var(--md-state-layer-mix));
   transition: background-image 15ms linear;
+  -webkit-tap-highlight-color: transparent;
 }
 
 [data-statelayer]:hover {
