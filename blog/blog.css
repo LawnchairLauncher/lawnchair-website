@@ -41,7 +41,6 @@ figure {
 }
 
 .blog:hover {
-  background-color: var(--surface-container-highest);
   border-radius: var(--shape-xl);
 }
 

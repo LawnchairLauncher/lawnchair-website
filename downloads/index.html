@@ -32,15 +32,15 @@
 
   <link href="/assets/m3/colors.css" rel="stylesheet" />
   <link href="/assets/m3/shapes.css" rel="stylesheet" />
-  <link href="/assets/common.css?newv63" rel="stylesheet" >
-  <link href="styles.css?newv6" rel="stylesheet" >
-  <script src="/assets/common.js?newv5" defer></script>
+  <link href="/assets/common.css?newv64" rel="stylesheet" >
+  <link href="styles.css?newv7" rel="stylesheet" >
+  <script src="/assets/common.js?newv6" defer></script>
   <script src="script.js?newv5_c12" type="module" defer></script>
 </head>
 
 <body>
   <header>
-    <a href="/" class="lawnchair__logo">
+    <a href="/" class="lawnchair__logo" data-statelayer>
       <picture>
         <source type="image/webp" srcset="/images/lawnchair.webp" >
         <img src="/images/lawnchair.png" alt="The Lawnchair Logo" fetchpriority="high" decoding="async" />
@@ -48,9 +48,9 @@
       <span>Lawnchair</span>
     </a>
     <nav id="nav">
-      <a href="/blog">Blog</a>
+      <a href="/blog" data-statelayer>Blog</a>
       <a href="#" class="active">Downloads</a>
-      <a href="https://docs.lawnchair.app">Docs</a>
+      <a href="https://docs.lawnchair.app" data-statelayer>Docs</a>
     </nav>
   </header>
   <main>
@@ -66,8 +66,8 @@
         <span class="card__version" id="js-lawnchair-version">Loading...</span>
       </div>
       <div class="card__downloads">
-        <a id="js-lawnchair-download" class="card__button primary disabled">Download</a>
-        <a class="card__button" href="https://github.com/lawnchairlauncher/lawnchair/releases">History</a>
+        <a id="js-lawnchair-download" class="card__button primary disabled" data-statelayer>Download</a>
+        <a class="card__button" href="https://github.com/lawnchairlauncher/lawnchair/releases" data-statelayer>History</a>
       </div>
     </div>
     <!-- Card 2 -->
@@ -79,8 +79,8 @@
         <span class="card__version" id="js-lawnfeed-version">Loading...</span>
       </div>
       <div class="card__downloads">
-        <a id="js-lawnfeed-download" class="icon-button material-symbols-outlined disabled">download</a>
-        <a class="icon-button material-symbols-outlined"
+        <a id="js-lawnfeed-download" class="icon-button material-symbols-outlined disabled" data-statelayer>download</a>
+        <a class="icon-button material-symbols-outlined" data-statelayer
           href="https://github.com/lawnchairlauncher/lawnfeed/releases">history</a>
       </div>
     </div>
@@ -93,9 +93,9 @@
         <span class="card__version" id="js-lawnicons-version">Loading...</span>
       </div>
       <div class="card__downloads">
-        <a id="js-lawnicons-download" class="icon-button material-symbols-outlined disabled">download</a>
+        <a id="js-lawnicons-download" class="icon-button material-symbols-outlined disabled" data-statelayer>download</a>
         <a class="icon-button material-symbols-outlined"
-          href="https://github.com/lawnchairlauncher/lawnicons/releases">history</a>
+          href="https://github.com/lawnchairlauncher/lawnicons/releases" data-statelayer>history</a>
       </div>
     </div>
     <!-- end cards -->

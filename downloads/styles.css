@@ -53,21 +53,8 @@ img {
   border-radius: 20px;
 }
 
-.card__downloads a.disabled {
-  cursor: not-allowed;
-}
-
 .card__downloads .icon-button.disabled {
-  color: var(--on-surface-variant);
-}
-
-.card__downloads .icon-button:not(.disabled):hover {
-  transition: background 0.4s ease;
-  background: var(--secondary-container);
-}
-
-.card__downloads .icon-button:not(.disabled):active {
-  background: var(--primary-container);
+  background: transparent;
 }
 
 .card__downloads a.card__button {
@@ -76,26 +63,15 @@ img {
 }
 
 .card__downloads a.card__button.primary {
-  background: var(--primary);
+  background-color: var(--primary);
   color: var(--on-primary);
   border: 0;
+  --md-state-layer-color: var(--on-primary)
 }
 
 .card__downloads a.card__button.disabled {
-  background: var(--surface-variant);
+  background-color: var(--surface-variant);
   color: var(--on-surface-variant);
-}
-
-.card__downloads a.card__button:not(.disabled).primary:hover {
-  filter: brightness(1.1);
-}
-
-.card__downloads a.card__button:not(.disabled).primary:active {
-  filter: brightness(0.9);
-}
-
-.card__downloads a.card__button:not(.disabled):not(.primary):hover {
-  background: var(--secondary-container);
 }
 
 .card.card__main {

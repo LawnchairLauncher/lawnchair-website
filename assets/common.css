@@ -1,7 +1,6 @@
 :root {
   --footer: var(--lawnchair-green-color-container);
   --on-footer: var(--lawnchair-green-on-color-container);
-
 }
 
 ::selection {
@@ -71,6 +70,7 @@ header > a {
   background-color: transparent;
   padding: 6px 10px 6px 6px;
   border-radius: 24px;
+  --md-state-layer-color: var(--lawnchair-accent-hover);
 }
 
 header > a:hover {
@@ -105,15 +105,9 @@ header nav a {
   border-radius: 20px;
 }
 
-header nav a:hover {
-  background: var(--primary-container);
-  color: var(--on-primary-container);
-}
-
 header nav a.active {
-  font-weight: bold;
-  background: var(--primary-fixed);
-  color: var(--on-primary-fixed);
+  color: var(--on-primary-container);
+  background: var(--primary-container);
 }
 
 /* Footer */
@@ -149,4 +143,57 @@ footer a:hover {
   header > a span {
     display: none;
   }
+}
+
+:root {
+  --md-state-hover-opacity: 0.08;
+  --md-state-focus-opacity: 0.1;
+  --md-state-pressed-opacity: 0.12;
+  --md-state-disabled-opacity: 0.38;
+  --md-state-layer-color: var(--on-surface);
+}
+
+[data-statelayer] {
+  position: relative;
+  overflow: hidden;
+  --md-state-layer-mix: transparent;
+  background-image: linear-gradient(var(--md-state-layer-mix), var(--md-state-layer-mix));
+  transition: background-image 15ms linear;
+}
+
+[data-statelayer]:hover {
+  --md-state-layer-mix: color-mix(in srgb, var(--md-state-layer-color) calc(var(--md-state-hover-opacity) * 100%), transparent);
+}
+[data-statelayer]:focus-visible {
+  --md-state-layer-mix: color-mix(in srgb, var(--md-state-layer-color) calc(var(--md-state-focus-opacity) * 100%), transparent);
+}
+
+[data-statelayer]:active:not(:has(> .ripple-layer)) {
+  --md-state-layer-mix: color-mix(in srgb, var(--md-state-layer-color) calc(var(--md-state-pressed-opacity) * 100%), transparent);
+}
+
+[data-statelayer].disabled {
+  --md-state-layer-mix: color-mix(in srgb, var(--md-state-layer-color) calc(var(--md-state-focus-opacity) * 100%), transparent);
+  background-color: var(--surface-variant);
+  color: var(--on-surface-variant);
+  opacity: 0.38;
+  pointer-events: none;
+  cursor: default;
+}
+
+[data-statelayer] .ripple-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  pointer-events: none;
+  will-change: transform, opacity;
+
+  opacity: var(--md-state-pressed-opacity);
+
+  background: radial-gradient(
+          closest-side,
+          var(--md-state-layer-color) max(calc(100% - 70px), 65%),
+          transparent 100%
+  );
 }

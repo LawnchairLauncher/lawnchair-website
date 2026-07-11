@@ -34,10 +34,10 @@
 
     <link href="/assets/m3/colors.css" rel="stylesheet" />
     <link href="/assets/m3/shapes.css" rel="stylesheet" />
-    <link href="/assets/common.css?newv63" rel="stylesheet" />
+    <link href="/assets/common.css?newv64" rel="stylesheet" />
     <link href="/assets/document.css?newv6" rel="stylesheet" />
     <link href="/blog/blog.css?newv2" rel="stylesheet" />
-    <script src="/assets/common.js?newv5" defer></script>
+    <script src="/assets/common.js?newv6" defer></script>
 
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://lawnchair.app/blog/feed.xml" />
 
@@ -90,13 +90,8 @@
       }
 
       .fancy-link:hover {
-        filter: brightness(0.9);
         border-radius: var(--shape-xl);
         border-bottom: 0;
-      }
-
-      .fancy-link:focus {
-        filter: brightness(0.8);
       }
 
       .fancy-link img {
@@ -153,9 +148,9 @@
         <span>Lawnchair</span>
       </a>
       <nav>
-        <a href="/blog">Blog</a>
-        <a href="/downloads">Downloads</a>
-        <a href="https://docs.lawnchair.app">Docs</a>
+        <a href="/blog" data-statelayer>Blog</a>
+        <a href="/downloads" data-statelayer>Downloads</a>
+        <a href="https://docs.lawnchair.app" data-statelayer>Docs</a>
       </nav>
     </header>
     <main>
@@ -232,12 +227,12 @@
         <p>Yes, that&#39;s right. We plan on being more active again on our social media. Starting next year, we plan to be more active on our X (Twitter) and our newly created Mastodon account! Go give us a follow if you haven&#39;t already.</p>
         <ul class="fancy-links">
           <li>
-            <a class="fancy-link twitter" href="https://x.com/lawnchairapp">
+            <a class="fancy-link twitter" href="https://x.com/lawnchairapp" data-statelayer>
               <img class="dark-invert" src="/images/x.svg" alt="" height="50" >
               <span>Follow us on X</span></a>
           </li>
           <li>
-            <a class="fancy-link mastodon" href="https://mastodon.social/@lawnchairapp">
+            <a class="fancy-link mastodon" href="https://mastodon.social/@lawnchairapp" data-statelayer>
               <img class="dark-invert" src="/images/mastodon.svg" alt="" height="50" >
               <span>Follow us on Mastodon</span></a>
           </li>

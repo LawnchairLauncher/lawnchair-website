@@ -4,8 +4,8 @@ function buildSnackbar() {
   function buildHtml() {
     return `
 <span>Several announcements are available.</span>
-<button class="snackbar_link">More info</button>
-<button class="snackbar_dismiss" title="Close this announcement">X</button>
+<button class="snackbar_link" data-statelayer>More info</button>
+<button class="snackbar_dismiss" title="Close this announcement" data-statelayer>X</button>
 `;
   }
 
@@ -72,11 +72,11 @@ function getAnnouncements(data) {
     const active = announcement.active ? "active" : ""
 
     return announcement.url != null ? `
-    <a class="announcement ${testMode} ${active}" href="${announcement.url}">
+    <a class="announcement ${testMode} ${active}" href="${announcement.url}" data-statelayer>
       <div class="title">${announcement.text}</div>
     </a>
     ` : `
-    <div class="announcement ${testMode} ${active}">
+    <div class="announcement ${testMode} ${active}" data-statelayer>
       <div class="title">${announcement.text}</div>
     </div>`
   }
@@ -90,7 +90,7 @@ function getAnnouncements(data) {
 
     return `<div class="announcements-title">Announcements</div>
     <div class="announcements-description">${items}</div>
-    <div class="announcements-buttons"><button class="dismiss">Dismiss</button></div>`
+    <div class="announcements-buttons"><button class="dismiss" data-statelayer>Dismiss</button></div>`
   }
 
   const ann = createAnnouncements(data)
