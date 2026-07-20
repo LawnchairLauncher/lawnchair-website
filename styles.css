@@ -27,6 +27,34 @@ header {
   background-color: transparent;
 }
 
+
+.button {
+  background-color: var(--secondary-container);
+  color: var(--on-secondary-container);
+  height: 56px;
+  padding: 16px 20px;
+  border-radius: var(--shape-xl);
+  text-decoration: none;
+  transition: background 0.3s, border-radius 0.3s;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  gap: 10px;
+  font-size: 0.9em;
+  --md-state-layer-color: var(--on-surface)
+}
+
+.button.primary {
+  background-color: var(--primary);
+  color: var(--on-primary);
+  --md-state-layer-color: var(--on-primary)
+}
+
+.button:active {
+  border-radius: var(--shape-m)
+}
+
+
 .scrim {
   position: fixed;
   width: 100%;
@@ -268,32 +296,6 @@ main>*:not(:first-child) {
   display: flex;
 }
 
-.hero__content__downloads .button {
-  background-color: var(--secondary-container);
-  color: var(--on-secondary-container);
-  height: 56px;
-  padding: 16px 20px;
-  border-radius: var(--shape-xl);
-  text-decoration: none;
-  transition: background 0.3s, border-radius 0.3s;
-  display: flex;
-  align-items: center;
-  text-align: left;
-  gap: 10px;
-  font-size: 0.9em;
-  --md-state-layer-color: var(--on-surface)
-}
-
-.hero__content__downloads .button:active {
-  border-radius: var(--shape-m)
-}
-
-.hero__content__downloads .button.primary {
-  background-color: var(--primary);
-  color: var(--on-primary);
-  --md-state-layer-color: var(--on-primary)
-}
-
 /* About section */
 .about {
   width: 85%;
@@ -379,32 +381,39 @@ main>*:not(:first-child) {
   width: 85%;
   margin: 12px auto 60px auto;
   font-size: 1.05em;
-  color: var(--on-tertiary-container);
+  color: var(--lawnchair-green-color);
 }
 
-.sponsor__card {
-  display: block;
+.sponsor__description {
+  font-size: 0.875rem;
+}
+
+.sponsor__major {
+  display: flex;
+  background-color: var(--surface-container-high);
+  border-radius: var(--shape-l);
+  padding: 16px 20px;
+  gap: 24px;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  --md-state-layer-color: var(--lawnchair-green-color);
+}
+
+.sponsor__opencollective {
+  margin: 16px;
+  max-width: 840px;
+  overflow-y: hidden;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--surface-container-high) var(--surface);
+}
+
+.sponsor__cta {
+  background-color: var(--lawnchair-green-color-container);
+  color: var(--lawnchair-green-on-color-container);
+  --md-state-layer-color: var(--lawnchair-green-on-color-container);
   width: fit-content;
-  transition: filter 0.4s ease;
-}
-
-.sponsor__card:hover {
-  filter: brightness(0.9);
-}
-
-.sponsor__card img {
-  display: block;
-  width: 300px;
-  max-width: 100%;
-  height: auto;
-}
-
-.sponsors__description {
-  margin-top: 30px;
-}
-
-.sponsors__description a {
-  color: var(--secondary);
 }
 
 /* Links section */
