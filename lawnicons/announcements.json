@@ -2,10 +2,10 @@
   "version": 2,
   "announcements": [
     {
-      "title": "Localize Lawnicons",
-      "description": "Help us speak your language.",
-      "icon": "ic_translate",
-      "url": "https://lawnchair.crowdin.com/lawnicons",
+      "title": "Lawnicons Feedback",
+      "description": "Quick survey.",
+      "icon": "ic_feedback",
+      "url": "https://forms.gle/DLiBCVUtLz99GJzH9",
       "location": "home"
     }
   ]
