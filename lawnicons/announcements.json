@@ -7,6 +7,13 @@
       "icon": "ic_feedback",
       "url": "https://forms.gle/DLiBCVUtLz99GJzH9",
       "location": "home"
+    },
+    {
+      "title": "Help identify request countries",
+      "description": "Improve request prioritization.",
+      "icon": "ic_identify_location",
+      "url": "https://github.com/LawnchairLauncher/lawnicons/issues/4073",
+      "location": "home"
     }
   ]
 }
